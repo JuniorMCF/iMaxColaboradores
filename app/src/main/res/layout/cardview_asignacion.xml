@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_margin="@dimen/_2sdp"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtEnvio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="ENVIO LMT919239"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTipoEntrega"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="CONTRA ENTREGA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtEnvio"
+            app:layout_constraintTop_toBottomOf="@+id/txtEnvio" />
+
+        <TextView
+            android:id="@+id/txtEmpresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="EXPRESO TRUJILLO-TRUJILLO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtTipoEntrega"
+            app:layout_constraintTop_toBottomOf="@+id/txtTipoEntrega" />
+
+        <TextView
+            android:id="@+id/textView83"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="ENVIA:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtEmpresa"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmpresa" />
+
+        <TextView
+            android:id="@+id/textView84"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:text="RECIBE:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView83"
+            app:layout_constraintTop_toBottomOf="@+id/textView83" />
+
+        <TextView
+            android:id="@+id/txtEnviaAsignacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:text="Juan"
+            app:layout_constraintBottom_toBottomOf="@+id/textView83"
+            app:layout_constraintStart_toEndOf="@+id/textView83"
+            app:layout_constraintTop_toTopOf="@+id/textView83"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txtRecibeAsignacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daniel"
+            app:layout_constraintBottom_toBottomOf="@+id/textView84"
+            app:layout_constraintStart_toStartOf="@+id/txtEnviaAsignacion"
+            app:layout_constraintTop_toTopOf="@+id/textView84" />
+
+        <TextView
+            android:id="@+id/txtCaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_marginEnd="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEmpresa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toEndOf="@+id/txtEmpresa"
+            app:layout_constraintTop_toTopOf="@+id/txtEmpresa"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txtDniEnvia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEnviaAsignacion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtCaja"
+            app:layout_constraintTop_toTopOf="@+id/txtEnviaAsignacion" />
+
+        <TextView
+            android:id="@+id/txtDniRecibe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/txtRecibeAsignacion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtDniEnvia"
+            app:layout_constraintTop_toTopOf="@+id/txtRecibeAsignacion" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

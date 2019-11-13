@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Activado"
+        android:title="Activado"
+        android:icon="@drawable/activo"
+        />
+    <item
+        android:id="@+id/Solicitudes"
+        android:title="Solicitudes"
+        android:icon="@drawable/solicitudes"
+        />
+    <item
+        android:id="@+id/Informes"
+        android:title="Informes"
+        android:icon="@drawable/informes"
+        />
+    <item
+        android:id="@+id/Perfil"
+        android:title="Perfil"
+        android:icon="@drawable/perfil"
+        />
+</menu>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_1sdp"
+    android:layout_marginBottom="@dimen/_1sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cv_informe"
+        android:layout_width="match_parent"
+        android:layout_height="101dp">
+
+
+        <TextView
+            android:id="@+id/etTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Total Servicios"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/etEntrega"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Por entregar :"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toTopOf="@+id/etEntregado"
+            app:layout_constraintEnd_toEndOf="@+id/etTotal"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etTotal"
+            app:layout_constraintTop_toBottomOf="@+id/etTotal" />
+
+        <TextView
+            android:id="@+id/etEntregado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entregado :"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toTopOf="@+id/etGanancia"
+            app:layout_constraintEnd_toEndOf="@+id/etTotal"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etTotal"
+            app:layout_constraintTop_toBottomOf="@+id/etEntrega" />
+
+        <TextView
+            android:id="@+id/ettotalporentregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="S/ 50.00"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/etEntrega"
+            app:layout_constraintEnd_toEndOf="@+id/ettotalServicio"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/etEntrega"
+            app:layout_constraintTop_toTopOf="@+id/etEntrega"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/etentregado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="S/ 130.00"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/etEntregado"
+            app:layout_constraintEnd_toEndOf="@+id/ettotalServicio"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/etEntrega"
+            app:layout_constraintTop_toBottomOf="@+id/etEntrega"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/etganancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="S/ 55.00"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/etGanancia"
+            app:layout_constraintEnd_toEndOf="@+id/ettotalServicio"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/etEntrega"
+            app:layout_constraintTop_toTopOf="@+id/etGanancia"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/etGanancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:text="GANANCIA :"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etEntrega"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/etDia"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:text="6"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/etMes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JUL"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/etDia"
+            app:layout_constraintHorizontal_bias="0.451"
+            app:layout_constraintStart_toStartOf="@+id/etDia"
+            app:layout_constraintTop_toBottomOf="@+id/etDia"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15"
+            app:layout_constraintGuide_begin="61dp" />
+
+        <TextView
+            android:id="@+id/ettotalServicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="95dp"
+            android:layout_marginEnd="70dp"
+            android:text="S/ 180.00"
+            app:layout_constraintBottom_toBottomOf="@+id/etTotal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/etTotal"
+            app:layout_constraintTop_toTopOf="@+id/etTotal"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

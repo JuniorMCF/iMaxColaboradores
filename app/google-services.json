@@ -1,0 +1,159 @@
+{
+  "project_info": {
+    "project_number": "1087004788584",
+    "firebase_url": "https://imaxproject-1563203952285.firebaseio.com",
+    "project_id": "imaxproject-1563203952285",
+    "storage_bucket": "imaxproject-1563203952285.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087004788584:android:34a44547efec24e60538dd",
+        "android_client_info": {
+          "package_name": "com.example.conductorprueba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087004788584-mjmhbgkitfvk0qhfhoc5t1cgjhnebk3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.conductorprueba",
+            "certificate_hash": "b6711ae32fa0d4b0919c55bdfa3db794e67f5bbc"
+          }
+        },
+        {
+          "client_id": "1087004788584-eas26m0viqlso21q3j5kkraj9j8pfhg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDth9SHlsXd-z3w2sbwi5vyMp3Narb6d-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087004788584-eas26m0viqlso21q3j5kkraj9j8pfhg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087004788584:android:a201123e5a3ca4dd0538dd",
+        "android_client_info": {
+          "package_name": "com.imaxclientes.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087004788584-t5epq0fbaeudgbceadkdlaa98lpj3jk0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imaxclientes.app",
+            "certificate_hash": "7d183bddeb87f76057298d38b9614621b3b4e638"
+          }
+        },
+        {
+          "client_id": "1087004788584-eas26m0viqlso21q3j5kkraj9j8pfhg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDth9SHlsXd-z3w2sbwi5vyMp3Narb6d-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087004788584-eas26m0viqlso21q3j5kkraj9j8pfhg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087004788584:android:8413248c66a3c9ad0538dd",
+        "android_client_info": {
+          "package_name": "com.imaxcolaboradores.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087004788584-q019gkng705a54k3ma93r0d2tpupudb2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imaxcolaboradores.app",
+            "certificate_hash": "7d183bddeb87f76057298d38b9614621b3b4e638"
+          }
+        },
+        {
+          "client_id": "1087004788584-eas26m0viqlso21q3j5kkraj9j8pfhg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDth9SHlsXd-z3w2sbwi5vyMp3Narb6d-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087004788584-eas26m0viqlso21q3j5kkraj9j8pfhg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087004788584:android:76f6d8459fc8309a0538dd",
+        "android_client_info": {
+          "package_name": "com.pantallas.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087004788584-ud19ne0kahpr2nd69br3kproo1j3d91k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pantallas.app",
+            "certificate_hash": "b6711ae32fa0d4b0919c55bdfa3db794e67f5bbc"
+          }
+        },
+        {
+          "client_id": "1087004788584-eas26m0viqlso21q3j5kkraj9j8pfhg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDth9SHlsXd-z3w2sbwi5vyMp3Narb6d-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087004788584-eas26m0viqlso21q3j5kkraj9j8pfhg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

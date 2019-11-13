@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+
+                    map:layout_constraintBottom_toTopOf="@+id/guideline4"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="1.0"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="parent"
+                    map:layout_constraintVertical_bias="1.0"
+                    tools:context=".features.Entrega.EntregaDisponibleActivity" />
+
+                <TextView
+                    android:id="@+id/etDistanciaEntregue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8.3km"
+                    android:textSize="@dimen/_12ssp"
+                    map:layout_constraintBottom_toTopOf="@+id/textView8"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="@+id/map"
+                    map:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_200sdp"
+                    android:orientation="horizontal"
+                    map:layout_constraintBottom_toBottomOf="parent"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintGuide_begin="298dp"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_600sdp"
+                    android:layout_marginBottom="@dimen/_240sdp"
+                    android:orientation="horizontal"
+                    map:layout_constraintBottom_toBottomOf="parent"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintGuide_begin="523dp"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="parent"
+                    map:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:text="DOMICILIO"
+                    android:textColor="#454F63"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    map:layout_constraintBottom_toTopOf="@+id/etObjetoAgencia"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="@+id/map"
+                    map:layout_constraintTop_toBottomOf="@+id/etDistanciaEntregue" />
+
+                <TextView
+                    android:id="@+id/etObjetoAgencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="envio"
+                    android:textSize="@dimen/_12ssp"
+                    map:layout_constraintBottom_toTopOf="@+id/guideline"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="@+id/textView8"
+                    map:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/background_circle"
+                    map:layout_constraintBottom_toTopOf="@+id/view"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="@+id/guideline"
+                    map:layout_constraintVertical_bias="0.0" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="#2A2E43"
+                    map:layout_constraintBottom_toTopOf="@+id/guideline2"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="@+id/guideline" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/background_circle2"
+                    map:layout_constraintBottom_toTopOf="@+id/guideline2"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toBottomOf="@+id/view"
+                    map:layout_constraintVertical_bias="0.0" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="#707070"
+                    map:layout_constraintBottom_toTopOf="@+id/button2"
+                    map:layout_constraintEnd_toEndOf="@+id/button"
+                    map:layout_constraintStart_toStartOf="@+id/button"
+                    map:layout_constraintTop_toBottomOf="@+id/button" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="#2A2E43"
+                    map:layout_constraintBottom_toTopOf="@+id/guideline2"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="@+id/guideline"
+                    map:layout_constraintVertical_bias="1.0" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="#2A2E43"
+                    map:layout_constraintBottom_toTopOf="@+id/view"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="@+id/guideline"
+                    map:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_100sdp"
+                    android:layout_marginEnd="@dimen/_315sdp"
+                    android:orientation="vertical"
+                    map:layout_constraintBottom_toBottomOf="parent"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintGuide_begin="@dimen/_80sdp"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/etDomicilioEnregue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="D9999"
+                    android:textColor="#454F63"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    map:layout_constraintBottom_toBottomOf="@+id/textView8"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toEndOf="@+id/textView8"
+                    map:layout_constraintTop_toTopOf="@+id/textView8" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="Recoger en:"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    map:layout_constraintBottom_toTopOf="@+id/view2"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toEndOf="@+id/button"
+                    map:layout_constraintTop_toTopOf="@+id/button" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="Entregar en:"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    map:layout_constraintBottom_toBottomOf="@+id/button2"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toEndOf="@+id/button2"
+                    map:layout_constraintTop_toTopOf="@+id/button2" />
+
+                <TextView
+                    android:id="@+id/etRecogerEntregue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:text="Av Arequipa 1386 Lima"
+                    android:textSize="@dimen/_12ssp"
+                    map:layout_constraintBottom_toTopOf="@+id/etReferenciaAgencia"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="@+id/textView11"
+                    map:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+                <TextView
+                    android:id="@+id/etReferenciaAgencia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:text="Edificio Elisa Dpto 705"
+                    android:textSize="@dimen/_12ssp"
+                    map:layout_constraintBottom_toTopOf="@+id/view"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="@+id/etRecogerEntregue"
+                    map:layout_constraintTop_toBottomOf="@+id/etRecogerEntregue" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:scaleType="fitXY"
+                    android:scaleX="1.0"
+                    map:layout_constraintBottom_toBottomOf="parent"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="@+id/guideline2"
+                    map:layout_constraintVertical_bias="1.0"
+                    map:srcCompat="@drawable/chocolate" />
+
+                <Button
+                    android:id="@+id/btnLlegueRecoger"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_70sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@drawable/button_border"
+                    android:text="ENTREGUE"
+                    android:textColor="#fff"
+                    map:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="1.0"
+                    map:layout_constraintStart_toStartOf="@+id/textView2"
+                    map:layout_constraintTop_toTopOf="@+id/imageView3"
+                    map:layout_constraintVertical_bias="0.921" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_206sdp"
+                    android:layout_marginBottom="797dp"
+                    android:orientation="horizontal"
+                    map:layout_constraintBottom_toBottomOf="parent"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintGuide_begin="210dp"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    android:background="@drawable/background_circle_yellow"
+                    map:layout_constraintBottom_toTopOf="@+id/button3"
+                    map:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="@+id/imageView3"
+                    map:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    map:layout_constraintBottom_toTopOf="@+id/button3"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintStart_toStartOf="@+id/guideline9"
+                    map:layout_constraintTop_toTopOf="@+id/imageView3"
+                    map:layout_constraintVertical_bias="0.0"
+                    map:srcCompat="@drawable/background_circle_white" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_59sdp"
+                    map:layout_constraintBottom_toTopOf="@+id/button3"
+                    map:layout_constraintEnd_toStartOf="@+id/guideline8"
+                    map:layout_constraintStart_toStartOf="@+id/guideline3"
+                    map:layout_constraintTop_toTopOf="@+id/imageView3"
+                    map:layout_constraintVertical_bias="0.0"
+                    map:srcCompat="@drawable/background_circle_white" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    map:layout_constraintBottom_toTopOf="@+id/button3"
+                    map:layout_constraintEnd_toStartOf="@+id/guideline9"
+                    map:layout_constraintStart_toStartOf="@+id/guideline8"
+                    map:layout_constraintTop_toTopOf="@+id/imageView3"
+                    map:layout_constraintVertical_bias="0.0"
+                    map:srcCompat="@drawable/background_circle_white" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    map:layout_constraintGuide_begin="@dimen/_160sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    map:layout_constraintGuide_begin="@dimen/_240sdp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Aceptar"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    map:layout_constraintBottom_toTopOf="@+id/imgCancelarPendiente"
+                    map:layout_constraintEnd_toEndOf="@+id/imageView5"
+                    map:layout_constraintStart_toStartOf="@+id/imageView5"
+                    map:layout_constraintTop_toBottomOf="@+id/imageView5"
+                    map:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Ir a recoger"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    map:layout_constraintBottom_toTopOf="@+id/button3"
+                    map:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    map:layout_constraintStart_toStartOf="@+id/imageView7"
+                    map:layout_constraintTop_toBottomOf="@+id/imageView7"
+                    map:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Ir a entregar"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    map:layout_constraintBottom_toTopOf="@+id/button3"
+                    map:layout_constraintEnd_toEndOf="@+id/imageView9"
+                    map:layout_constraintStart_toStartOf="@+id/imageView9"
+                    map:layout_constraintTop_toBottomOf="@+id/imageView9"
+                    map:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Entregado"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    map:layout_constraintBottom_toTopOf="@+id/button3"
+                    map:layout_constraintEnd_toEndOf="@+id/imageView6"
+                    map:layout_constraintStart_toStartOf="@+id/imageView6"
+                    map:layout_constraintTop_toBottomOf="@+id/imageView6"
+                    map:layout_constraintVertical_bias="0.0" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#707070"
+                    map:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                    map:layout_constraintEnd_toStartOf="@+id/imageView7"
+                    map:layout_constraintStart_toEndOf="@+id/imageView5"
+                    map:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#707070"
+                    map:layout_constraintBottom_toBottomOf="@+id/imageView9"
+                    map:layout_constraintEnd_toStartOf="@+id/imageView9"
+                    map:layout_constraintStart_toEndOf="@+id/imageView7"
+                    map:layout_constraintTop_toTopOf="@+id/imageView9" />
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#707070"
+                    map:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                    map:layout_constraintEnd_toStartOf="@+id/imageView6"
+                    map:layout_constraintStart_toEndOf="@+id/imageView9"
+                    map:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+                <FrameLayout
+                    android:id="@+id/container_rechazo_pedido"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="visible">
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/txtEnvio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    map:layout_constraintBottom_toBottomOf="@+id/etObjetoAgencia"
+                    map:layout_constraintStart_toStartOf="@+id/etDomicilioEnregue"
+                    map:layout_constraintTop_toTopOf="@+id/etObjetoAgencia" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_entregue_asignacion"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    map:layout_constraintBottom_toTopOf="@+id/guideline2"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintStart_toStartOf="@+id/textView12"
+                    map:layout_constraintTop_toBottomOf="@+id/textView12"
+                    tools:listitem="@layout/cardview_entregue_asignacion"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

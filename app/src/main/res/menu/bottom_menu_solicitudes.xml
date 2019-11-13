@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+g
+    <item android:title="Activados" android:id="@+id/action_bottom_activados" android:icon="@drawable/activo"/>
+    <item android:title="Solicitudes" android:id="@+id/action_bottom_solicitudes" android:icon="@drawable/solicitudes" />
+    <item android:title="Informes" android:id="@+id/action_bottom_informes" android:icon="@drawable/informes" />
+    <item android:title="Perfil" android:id="@+id/action_bottom_perfil" android:icon="@drawable/perfil"/>
+</menu>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="DISPONIBLES" android:id="@+id/action_disponibles" />
+    <item android:title="PENDIENTES" android:id="@+id/action_pendientes" />
+    <item android:title="HISTORIAL" android:id="@+id/action_historial" />
+</menu>
