@@ -1,6 +1,7 @@
 package com.imaxcolaboradores.app.features.Principal.fragments
 
 
+import android.opengl.Visibility
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.imaxcolaboradores.app.R
-import com.imaxcolaboradores.app.features.Principal.primerbottonviewActivity
 import kotlinx.android.synthetic.main.fragment_activo.*
 
 /**
@@ -16,7 +16,10 @@ import kotlinx.android.synthetic.main.fragment_activo.*
  */
 class activoFragment : Fragment() {
 
-    override fun onCreateView(
+    private var desactivado = false
+
+
+     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -28,14 +31,18 @@ class activoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // Inflate the layout for this fragment
-        btn_desactivar.setOnClickListener {
+        btnDesactivar.setOnClickListener {
+            if(desactivado){
+                btnDesactivar.text = "Activar"
+                txtTitulo.text = "Recuerda que cuanto más tiempo permanezcas ACTIVADO ganarás mas..."
+                txtActivate.visibility = View.VISIBLE
 
-            (context as primerbottonviewActivity)
-                .supportFragmentManager
-                .beginTransaction()
-                .add(R.id.frame_layaout,
-                    desactivadoFragment(),"desactivadofragment")
-                .addToBackStack("null").commit()
+            }else{
+                btnDesactivar.text = "Desactivar"
+                txtTitulo.text = "¡Excelente! sigue en este estado para que te lleguen solicitudes."
+                txtActivate.visibility = View.GONE
+            }
+            desactivado = !desactivado
 
         }
     }

@@ -34,7 +34,7 @@ class SolicitudesHistorialFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_solicitudes_historial, container, false)
 
 
-        setObservers()
+
         //initAdapter()
         //obtenerData()
         return view
@@ -42,6 +42,7 @@ class SolicitudesHistorialFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setObservers()
         initAdapter()
         obtenerData()
     }

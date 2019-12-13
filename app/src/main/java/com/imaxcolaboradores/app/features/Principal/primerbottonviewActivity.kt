@@ -23,13 +23,12 @@ class primerbottonviewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_primerbottonview)
 
         val bottomNavigationView : BottomNavigationView = findViewById(R.id.btm_nav1)
-
         //boton por defautl
         activadofragment = activoFragment()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.frame_layaout, activadofragment)
-            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            //.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
             .commit()
 
 
@@ -42,7 +41,7 @@ class primerbottonviewActivity : AppCompatActivity() {
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.frame_layaout, activadofragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        //.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
 
                 }
@@ -52,7 +51,7 @@ class primerbottonviewActivity : AppCompatActivity() {
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.frame_layaout, solisitudesgrafment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                      // .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
 
                 }
@@ -62,7 +61,7 @@ class primerbottonviewActivity : AppCompatActivity() {
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.frame_layaout, informesfragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                       // .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
 
                 }
@@ -72,7 +71,7 @@ class primerbottonviewActivity : AppCompatActivity() {
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.frame_layaout, perfinfragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                      //  .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
 
                 }
