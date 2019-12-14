@@ -2,15 +2,20 @@ package com.imaxcolaboradores.app.features.Principal.Adapters
 
 import android.content.Context
 import android.content.Intent
+import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+
 import androidx.recyclerview.widget.RecyclerView
 import com.imaxcolaboradores.app.R
 import com.imaxcolaboradores.app.features.Entrega.EntregaDisponibleActivity
-import com.imaxcolaboradores.app.features.Principal.primerbottonviewActivity
+
 import com.imaxcolaboradores.app.models.SolicitudesDisponibles
 import kotlinx.android.synthetic.main.cardview_disponible.view.*
+import kotlinx.android.synthetic.main.fragment_solicitudes_disponible.view.*
+
 
 class DisponiblesAdapter: RecyclerView.Adapter<DisponiblesAdapter.MyViewHolder>() {
 
@@ -29,11 +34,17 @@ class DisponiblesAdapter: RecyclerView.Adapter<DisponiblesAdapter.MyViewHolder>(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.itemView.etLugarDisponible.text = list!![position].lugar
         holder.itemView.etTiempoDisponible.text = list!![position].tiempo
+        holder.itemView.etTipo.text = list!![position].tipo
 
-        holder.itemView.cv_disponible.setOnClickListener(){
-            val intent = Intent(context , EntregaDisponibleActivity::class.java)
-            (context as primerbottonviewActivity).startActivity(intent)
+        if(list!![position].lugar == ""){
+            holder.itemView.etEntregaDisponible.text  = ""
         }
+        holder.itemView.cv_disponible.setOnClickListener{
+            val intent = Intent(context , EntregaDisponibleActivity::class.java)
+            intent.putExtra("pedidoDisponible",list!![position])
+            context!!.startActivity(intent)
+        }
+
 
 
     }

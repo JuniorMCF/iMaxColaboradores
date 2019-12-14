@@ -2,29 +2,47 @@ package com.imaxcolaboradores.app.features.Principal
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentTransaction
+
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.imaxcolaboradores.app.R
-import com.imaxcolaboradores.app.features.Principal.fragments.activoFragment
-import com.imaxcolaboradores.app.features.Principal.fragments.informesFragment
-import com.imaxcolaboradores.app.features.Principal.fragments.perfilFragment
-import com.imaxcolaboradores.app.features.Principal.fragments.solicitudesFragment
+import com.imaxcolaboradores.app.features.Principal.Adapters.HistorialAdapter
+import com.imaxcolaboradores.app.features.Principal.Adapters.PedidosAdapter
+import com.imaxcolaboradores.app.features.Principal.fragments.ActivoFragment
+import com.imaxcolaboradores.app.features.Principal.fragments.InformesFragment
+import com.imaxcolaboradores.app.features.Principal.fragments.PerfilFragment
+import com.imaxcolaboradores.app.features.Principal.fragments.SolicitudesFragment
+import com.imaxcolaboradores.app.models.Pedido
 
-class primerbottonviewActivity : AppCompatActivity() {
+class PrimerActivity : AppCompatActivity() {
+
+    var tipoColaborador:String?=null  // 0 : acopiador ( menor a 500m ) , 1: motorizado , 2: conductor (furgon)
 
 
-    lateinit var activadofragment : activoFragment
-    lateinit var solisitudesgrafment : solicitudesFragment
-    lateinit var informesfragment : informesFragment
-    lateinit var perfinfragment : perfilFragment
+    var database:FirebaseFirestore? = null
+    var pedidoList = ArrayList<Pedido>()
+    var historialList = ArrayList<Pedido>()
+    var PendienteList = ArrayList<Pedido>()
+    var adapter : PedidosAdapter? = null
+    lateinit var activadofragment : ActivoFragment
+    lateinit var solisitudesgrafment : SolicitudesFragment
+    lateinit var informesfragment : InformesFragment
+    lateinit var perfinfragment : PerfilFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_primerbottonview)
 
         val bottomNavigationView : BottomNavigationView = findViewById(R.id.btm_nav1)
-        //boton por defautl
-        activadofragment = activoFragment()
+        //llamamos a la funcion de firebase
+
+        database =  FirebaseFirestore.getInstance()
+
+        tipoColaborador = "1"
+
+        //boton por defautlt
+        activadofragment = ActivoFragment()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.frame_layaout, activadofragment)
@@ -37,7 +55,7 @@ class primerbottonviewActivity : AppCompatActivity() {
             when(item.itemId){
                 R.id.Activado ->{
                     activadofragment =
-                        activoFragment()
+                        ActivoFragment()
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.frame_layaout, activadofragment)
@@ -47,7 +65,7 @@ class primerbottonviewActivity : AppCompatActivity() {
                 }
                 R.id.Solicitudes ->{
                     solisitudesgrafment =
-                        solicitudesFragment()
+                        SolicitudesFragment()
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.frame_layaout, solisitudesgrafment)
@@ -57,7 +75,7 @@ class primerbottonviewActivity : AppCompatActivity() {
                 }
                 R.id.Informes ->{
                     informesfragment =
-                        informesFragment()
+                        InformesFragment()
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.frame_layaout, informesfragment)
@@ -67,7 +85,7 @@ class primerbottonviewActivity : AppCompatActivity() {
                 }
                 R.id.Perfil ->{
                     perfinfragment =
-                        perfilFragment()
+                        PerfilFragment()
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.frame_layaout, perfinfragment)
@@ -80,5 +98,9 @@ class primerbottonviewActivity : AppCompatActivity() {
             }
             true
         }
+
+
+
+
     }
 }

@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.imaxcolaboradores.app.R
 import com.imaxcolaboradores.app.features.Entrega.EntregaPendienteActivity
-import com.imaxcolaboradores.app.features.Principal.primerbottonviewActivity
+import com.imaxcolaboradores.app.features.Principal.PrimerActivity
 import com.imaxcolaboradores.app.models.SolicitudesPendientes
+import kotlinx.android.synthetic.main.cardview_disponible.view.*
 import kotlinx.android.synthetic.main.cardview_pendientes.view.*
 
 class PendientesAdapter:RecyclerView.Adapter<PendientesAdapter.MyViewHolder>() {
@@ -34,10 +35,13 @@ class PendientesAdapter:RecyclerView.Adapter<PendientesAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.itemView.etLugarPendientes.text = list!![position].lugar
         holder.itemView.etTiempoPendientes.text = list!![position].tiempo
-
+        if(list!![position].tipo == "3"){
+            holder.itemView.etEntregaDisponible.text  = ""
+        }
+        holder.itemView.etTipoDisponible.text = list!![position].tipo
         holder.itemView.cv_pendiente.setOnClickListener(){
             val intent = Intent(context , EntregaPendienteActivity::class.java)
-            (context as primerbottonviewActivity).startActivity(intent)
+            (context as PrimerActivity).startActivity(intent)
         }
 
     }

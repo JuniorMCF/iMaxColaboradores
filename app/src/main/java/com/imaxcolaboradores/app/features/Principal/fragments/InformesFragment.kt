@@ -9,12 +9,12 @@ import android.view.ViewGroup
 
 import com.imaxcolaboradores.app.R
 import com.imaxcolaboradores.app.features.Principal.fragments.informesfragment.InformeEntregaFragment
-import com.imaxcolaboradores.app.features.Principal.primerbottonviewActivity
+import com.imaxcolaboradores.app.features.Principal.PrimerActivity
 
 /**
  * A simple [Fragment] subclass.
  */
-class informesFragment : Fragment() {
+class InformesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +26,7 @@ class informesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // Inflate the layout for this fragment
-        (context as primerbottonviewActivity)
+        (context as PrimerActivity)
             .supportFragmentManager
             .beginTransaction()
             .add(R.id.frame_layaout,

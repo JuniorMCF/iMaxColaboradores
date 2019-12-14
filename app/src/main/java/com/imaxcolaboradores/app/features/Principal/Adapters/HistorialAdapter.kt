@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.imaxcolaboradores.app.R
 import com.imaxcolaboradores.app.features.Principal.fragments.solicitudesfragment.HistorialDetalleFragment
-import com.imaxcolaboradores.app.features.Principal.primerbottonviewActivity
+import com.imaxcolaboradores.app.features.Principal.PrimerActivity
 import com.imaxcolaboradores.app.models.SolicitudesHistorial
 import kotlinx.android.synthetic.main.cardview_historial.view.*
 
@@ -36,7 +36,7 @@ class HistorialAdapter: RecyclerView.Adapter<HistorialAdapter.MyViewHolder>() {
 
 
         holder.itemView.cv_historial.setOnClickListener{
-            (context as primerbottonviewActivity).supportFragmentManager.beginTransaction().add(R.id.container_pantalla_total,HistorialDetalleFragment(),"historial_detalle_fragment").addToBackStack(null).commit()
+            (context as PrimerActivity).supportFragmentManager.beginTransaction().add(R.id.container_pantalla_total,HistorialDetalleFragment(),"historial_detalle_fragment").addToBackStack(null).commit()
         }
     }
 

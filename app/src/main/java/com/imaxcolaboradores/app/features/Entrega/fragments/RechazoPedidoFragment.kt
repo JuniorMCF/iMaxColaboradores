@@ -10,9 +10,7 @@ import android.view.ViewGroup
 
 import com.imaxcolaboradores.app.R
 import com.imaxcolaboradores.app.features.Entrega.EntregaPendienteActivity
-import com.imaxcolaboradores.app.features.Principal.PrincipalActivity
-import com.imaxcolaboradores.app.features.Principal.primerbottonviewActivity
-import kotlinx.android.synthetic.main.fragment_rechazo_pedido.*
+import com.imaxcolaboradores.app.features.Principal.PrimerActivity
 import kotlinx.android.synthetic.main.fragment_rechazo_pedido.view.*
 
 /**
@@ -38,7 +36,7 @@ class RechazoPedidoFragment : Fragment() {
 
         view!!.btn_enviar.setOnClickListener{
 
-            val intent = Intent(context,primerbottonviewActivity::class.java)
+            val intent = Intent(context,PrimerActivity::class.java)
             startActivity(intent)
             (context as EntregaPendienteActivity).finishAffinity()
 

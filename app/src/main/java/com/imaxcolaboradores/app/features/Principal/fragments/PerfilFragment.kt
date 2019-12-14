@@ -12,7 +12,7 @@ import com.imaxcolaboradores.app.R
 /**
  * A simple [Fragment] subclass.
  */
-class perfilFragment : Fragment() {
+class PerfilFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

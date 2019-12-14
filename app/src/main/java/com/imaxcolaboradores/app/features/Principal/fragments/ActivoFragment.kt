@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_activo.*
 /**
  * A simple [Fragment] subclass.
  */
-class activoFragment : Fragment() {
+class ActivoFragment : Fragment() {
 
     private var desactivado = false
 

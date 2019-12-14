@@ -52,6 +52,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "1087004788584-f3jqpqhhef0u5csg9v22j5n1uv7dkvlq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imaxclientes.app",
+            "certificate_hash": "a127f62c83096a83ae8bf08b39a1e02530772a4f"
+          }
+        },
+        {
+          "client_id": "1087004788584-fr2clk8ih14hnk88r6t6uhk1bjvofenh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imaxclientes.app",
+            "certificate_hash": "59441a4ed47fb1e32eb01cf06e9a0a43e8350b2a"
+          }
+        },
+        {
           "client_id": "1087004788584-t5epq0fbaeudgbceadkdlaa98lpj3jk0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -88,6 +104,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1087004788584-91k9490db61pql8trbshm1j00l4e0vrh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imaxcolaboradores.app",
+            "certificate_hash": "59441a4ed47fb1e32eb01cf06e9a0a43e8350b2a"
+          }
+        },
         {
           "client_id": "1087004788584-q019gkng705a54k3ma93r0d2tpupudb2.apps.googleusercontent.com",
           "client_type": 1,

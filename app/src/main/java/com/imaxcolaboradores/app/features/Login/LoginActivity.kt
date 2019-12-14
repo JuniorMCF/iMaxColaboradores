@@ -12,9 +12,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.imaxcolaboradores.app.R
 import com.imaxcolaboradores.app.features.Principal.PrincipalActivity
 import com.imaxcolaboradores.app.models.LoginResponse
-import com.imaxcolaboradores.app.features.Principal.primerbottonviewActivity
+import com.imaxcolaboradores.app.features.Principal.PrimerActivity
 import kotlinx.android.synthetic.main.activity_login.*
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
         //TODO("sin view model")
 
         if(auth.currentUser != null){
-            val intent = Intent(this,primerbottonviewActivity::class.java)
+            val intent = Intent(this,PrimerActivity::class.java)
             startActivity(intent)
         }
 
@@ -51,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
                         //val user = auth.currentUser
-                        val intent = Intent(this,primerbottonviewActivity::class.java)
+                        val intent = Intent(this,PrimerActivity::class.java)
                         startActivity(intent)
 
                     } else {

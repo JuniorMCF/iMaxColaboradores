@@ -49,7 +49,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView50"
+                        android:id="@+id/txtDomicilio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_16sdp"
@@ -60,19 +60,19 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView30"
+                        app:layout_constraintTop_toBottomOf="@+id/txtDistancia"
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/textView51"
+                        android:id="@+id/txtObjeto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:textSize="@dimen/_12ssp"
                         android:text="Objeto"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/textView50"
-                        app:layout_constraintTop_toBottomOf="@+id/textView50"
+                        app:layout_constraintStart_toStartOf="@+id/txtDomicilio"
+                        app:layout_constraintTop_toBottomOf="@+id/txtDomicilio"
                         app:layout_constraintVertical_bias="0.0" />
 
                     <ImageView
@@ -81,12 +81,12 @@
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginEnd="@dimen/_16sdp"
                         android:src="@drawable/ic_camara_magenta"
-                        app:layout_constraintBottom_toBottomOf="@+id/textView51"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtObjeto"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/textView50" />
+                        app:layout_constraintTop_toTopOf="@+id/txtDomicilio" />
 
                     <TextView
-                        android:id="@+id/textView30"
+                        android:id="@+id/txtDistancia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_16sdp"
@@ -99,7 +99,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView65"
+                        android:id="@+id/txtCosto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/_16sdp"
@@ -108,8 +108,8 @@
                         app:layout_constraintBottom_toTopOf="@+id/imageView8"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toEndOf="@+id/textView30"
-                        app:layout_constraintTop_toTopOf="@+id/textView30"
+                        app:layout_constraintStart_toEndOf="@+id/txtDistancia"
+                        app:layout_constraintTop_toTopOf="@+id/txtDistancia"
                         app:layout_constraintVertical_bias="0.0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
@@ -152,7 +152,7 @@
                         app:layout_constraintTop_toTopOf="@+id/imageView16" />
 
                     <TextView
-                        android:id="@+id/textView55"
+                        android:id="@+id/txtDirRecogerEn"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_16sdp"
@@ -166,7 +166,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView54" />
 
                     <TextView
-                        android:id="@+id/textView56"
+                        android:id="@+id/txtRefRecogerEn"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
@@ -176,8 +176,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/textView55"
-                        app:layout_constraintTop_toBottomOf="@+id/textView55"
+                        app:layout_constraintStart_toStartOf="@+id/txtDirRecogerEn"
+                        app:layout_constraintTop_toBottomOf="@+id/txtDirRecogerEn"
                         app:layout_constraintVertical_bias="0.0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
@@ -222,7 +222,7 @@
                         app:layout_constraintTop_toTopOf="@+id/imageView17" />
 
                     <TextView
-                        android:id="@+id/textView58"
+                        android:id="@+id/txtDirEntregarEn"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_16sdp"
@@ -236,7 +236,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView57" />
 
                     <TextView
-                        android:id="@+id/textView59"
+                        android:id="@+id/txtRefEntregarEn"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
@@ -246,8 +246,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/textView58"
-                        app:layout_constraintTop_toBottomOf="@+id/textView58"
+                        app:layout_constraintStart_toStartOf="@+id/txtDirEntregarEn"
+                        app:layout_constraintTop_toBottomOf="@+id/txtDirEntregarEn"
                         app:layout_constraintVertical_bias="0.0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
@@ -285,7 +285,7 @@
                 app:layout_constraintTop_toTopOf="@+id/view18">
 
                 <ImageView
-                    android:id="@+id/imageView18"
+                    android:id="@+id/imgAceptar"
                     android:layout_width="@dimen/_15sdp"
                     android:layout_height="@dimen/_15sdp"
                     android:src="@drawable/background_circle_yellow"
@@ -348,9 +348,9 @@
                     android:layout_marginTop="8dp"
                     android:text="Aceptar"
                     android:textColor="@color/colorWhite"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView18"
-                    app:layout_constraintStart_toStartOf="@+id/imageView18"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView18" />
+                    app:layout_constraintEnd_toEndOf="@+id/imgAceptar"
+                    app:layout_constraintStart_toStartOf="@+id/imgAceptar"
+                    app:layout_constraintTop_toBottomOf="@+id/imgAceptar" />
 
                 <TextView
                     android:id="@+id/textView61"

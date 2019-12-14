@@ -2,25 +2,28 @@ package com.imaxcolaboradores.app.features.Principal.fragments
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.google.firebase.firestore.DocumentChange
 
 import com.imaxcolaboradores.app.R
-import com.imaxcolaboradores.app.features.Principal.fragments.solicitudesfragment.DisponibleFragment
-import com.imaxcolaboradores.app.features.Principal.fragments.solicitudesfragment.PendienteFragment
+import com.imaxcolaboradores.app.features.Principal.fragments.solicitudesfragment.SolicitudesDisponibleFragment
 import com.imaxcolaboradores.app.features.Principal.fragments.solicitudesfragment.SolicitudesHistorialFragment
-import com.imaxcolaboradores.app.features.Principal.primerbottonviewActivity
+import com.imaxcolaboradores.app.features.Principal.fragments.solicitudesfragment.SolicitudesPendientesFragment
+import com.imaxcolaboradores.app.features.Principal.PrimerActivity
+import com.imaxcolaboradores.app.models.Pedido
 import kotlinx.android.synthetic.main.fragment_solicitudes.*
 import kotlinx.android.synthetic.main.fragment_solicitudes.view.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class solicitudesFragment : Fragment() {
+class SolicitudesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,11 +40,11 @@ class solicitudesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // Inflate the layout for this fragment
 
-        val fragmentManager = (context as primerbottonviewActivity).supportFragmentManager
+        val fragmentManager = (context as PrimerActivity).supportFragmentManager
         val adapter = ViewPagerSolicitudes(fragmentManager)
-        adapter.addFragment(DisponibleFragment(),"Disponibles")
+        adapter.addFragment(SolicitudesDisponibleFragment(),"Disponibles")
         adapter.addFragment(SolicitudesHistorialFragment(),"Historial")
-        adapter.addFragment(PendienteFragment(),"Pendiente")
+        adapter.addFragment(SolicitudesPendientesFragment(),"Pendiente")
         vpSolicitudes.offscreenPageLimit = 0
         vpSolicitudes.adapter = adapter
         tlSolicitudes.setupWithViewPager(view.vpSolicitudes)

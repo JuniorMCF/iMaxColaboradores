@@ -27,6 +27,53 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:listitem="@layout/cardview_disponible" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+                <ImageView
+                    android:id="@+id/imgAcopiador"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/acopiador"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imgContenedorNotif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/notificacion"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/txtNotif"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgContenedorNotif"
+                    app:layout_constraintEnd_toEndOf="@+id/imgContenedorNotif"
+                    app:layout_constraintStart_toStartOf="@+id/imgContenedorNotif"
+                    app:layout_constraintTop_toTopOf="@+id/imgContenedorNotif" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

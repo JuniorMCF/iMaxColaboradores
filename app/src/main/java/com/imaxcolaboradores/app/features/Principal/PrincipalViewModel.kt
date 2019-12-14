@@ -16,22 +16,13 @@ class PrincipalViewModel: ViewModel() {
     private var historialList: MutableList<SolicitudesHistorial> = ArrayList()
 
     fun getDisponibles(){
-        val disponible1= SolicitudesDisponibles("Lima","20min")
-        val disponible2= SolicitudesDisponibles("Comas","3min")
-        val disponible3= SolicitudesDisponibles("Independencia","10min")
-
-        disponibleList.add(disponible1)
-        disponibleList.add(disponible2)
-        disponibleList.add(disponible3)
-
-        disponibleSuccess.postValue(disponibleList)
 
     }
 
     fun getPendiente(){
-        val pendiente1= SolicitudesPendientes("Arequipa","10min")
-        val pendiente2= SolicitudesPendientes("San Juan del Lurigancho","3min")
-        val pendiente3= SolicitudesPendientes("Independencia","10min")
+        val pendiente1= SolicitudesPendientes("","Arequipa","10min")
+        val pendiente2= SolicitudesPendientes("","San Juan del Lurigancho","3min")
+        val pendiente3= SolicitudesPendientes("","Independencia","10min")
 
         pendienteList.add(pendiente1)
         pendienteList.add(pendiente2)

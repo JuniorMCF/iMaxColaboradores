@@ -19,7 +19,7 @@
         <activity android:name=".features.Entrega.EntregaRealizadaActivity"></activity>
         <activity android:name=".features.Entrega.EntregaRecogerActivity" />
         <activity android:name=".features.Entrega.EntregaPendienteActivity" />
-        <activity android:name=".features.Principal.primerbottonviewActivity" />
+        <activity android:name=".features.Principal.PrimerActivity" />
         <activity
             android:name=".principal.primerActivity"
             android:label="@string/title_activity_primer" />
