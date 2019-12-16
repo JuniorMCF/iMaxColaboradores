@@ -10,6 +10,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.DocumentChange
+import com.imaxclientes.app.models.PedidoAgencia
+import com.imaxclientes.app.models.PedidoCargo
+import com.imaxclientes.app.models.PedidoDomicilio
 
 import com.imaxcolaboradores.app.R
 import com.imaxcolaboradores.app.features.Principal.Adapters.DisponiblesAdapter
@@ -66,6 +69,8 @@ class SolicitudesDisponibleFragment : Fragment() {
         }
 
         setObservers()
+        initAdapter(view)
+        obtenerData()
 
 
         return view
@@ -74,8 +79,6 @@ class SolicitudesDisponibleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        obtenerData()
-        initAdapter()
     }
     private fun obtenerData(){
         (context as PrimerActivity).pedidoList!!.clear()
@@ -108,20 +111,15 @@ class SolicitudesDisponibleFragment : Fragment() {
                             pedido.tiempo = dc.document.get("fechaGenerada").toString()
                             pedido.document = dc.document
                             (context as PrimerActivity).pedidoList.add(pedido)
+                            adapter.notifyDataSetChanged()
 
                         }
                         DocumentChange.Type.MODIFIED ->{
                             Log.d("aca", "Modified city: ${dc.document.data}")
                             for((i,data) in (context as PrimerActivity).pedidoList!!.withIndex()){
                                 if(data.document!!.id == dc.document.id){
-                                    (context as PrimerActivity).pedidoList!!.removeAt(i)
-                                    var pedido = Pedido()
-                                    pedido.tipo = dc.document.get("tipoServicio").toString()
-                                    pedido.tipo = dc.document.get("recogerEn").toString()
-                                    pedido.tiempo = dc.document.get("fechaGenerada").toString()
-                                    pedido.document = dc.document
-                                    (context as PrimerActivity).pedidoList!!.add(i,pedido)
-
+                                    (context as PrimerActivity).pedidoList[i].document = dc.document
+                                    adapter.notifyDataSetChanged()
                                 }
                             }
                         }
@@ -130,6 +128,7 @@ class SolicitudesDisponibleFragment : Fragment() {
                             for((i, data) in (context as PrimerActivity).pedidoList!!.withIndex()){
                                 if(data.document!!.id == dc.document.id){
                                     (context as PrimerActivity).pedidoList!!.removeAt(i)
+                                    adapter.notifyDataSetChanged()
                                 }
                             }
 
@@ -151,26 +150,30 @@ class SolicitudesDisponibleFragment : Fragment() {
 
 
             //-------ACOPIADOR--------//  0
-            if((context as PrimerActivity).tipoColaborador == "0"){  // Acopiador (menor a 500m)
+            if((context as PrimerActivity).tipoColaborador == "0" && data.document!!.get("estadoServicio")=="0"){  // Acopiador (menor a 500m)
                // posicion del colaborador - posicion de la solicitud
 
             }
 
 
             //-------MOTORIZADO--------//  1
-            else if((context as PrimerActivity).tipoColaborador == "1"){ // Motorizado  (mayor a 500m)
+            else if((context as PrimerActivity).tipoColaborador == "1" && data.document!!.get("estadoServicio")=="0"){ // Motorizado  (mayor a 500m)
                 if(rol == "acopiador-motorizado"){
                     //se muestran agencia y recojo
-                    if (data.tipo == "1"){
+                    if (data.tipo == "1"){   // 0 : domicilio  1: agencia 2: con recojo 3:sin recojo
                         solicitudDisponible.tipo = "AGENCIA LIMA"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
+                        solicitudDisponible.data = data.document!!.toObject(PedidoAgencia::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         listDisponible!!.add(solicitudDisponible)
                     }
                     if (data.tipo == "2"){
                         solicitudDisponible.tipo = "CON RECOJO"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
+                        solicitudDisponible.data = data.document!!.toObject(PedidoCargo::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         listDisponible!!.add(solicitudDisponible)
                     }
                 }
@@ -182,7 +185,8 @@ class SolicitudesDisponibleFragment : Fragment() {
                         solicitudDisponible.tipo = "DOMICILIO"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
-                        solicitudDisponible.movilidad = data.document!!.get("tipoTransporte").toString()
+                        solicitudDisponible.data = data.document!!.toObject(PedidoDomicilio::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         /*if(data.document!!.get("estadoServicio") == "0"){
                         }
                         */
@@ -192,12 +196,16 @@ class SolicitudesDisponibleFragment : Fragment() {
                         solicitudDisponible.tipo = "AGENCIA LIMA"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
+                        solicitudDisponible.data = data.document!!.toObject(PedidoAgencia::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         listDisponible!!.add(solicitudDisponible)
                     }
                     if (data.tipo == "2"){
                         solicitudDisponible.tipo = "CON RECOJO"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
+                        solicitudDisponible.data = data.document!!.toObject(PedidoCargo::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         listDisponible!!.add(solicitudDisponible)
                     }
 
@@ -205,19 +213,23 @@ class SolicitudesDisponibleFragment : Fragment() {
             }
 
             //-------CONDUCTOR--------//   2
-            else if((context as PrimerActivity).tipoColaborador == "2"){ // Conductor (furgon  mayor a  500m )
+            else if((context as PrimerActivity).tipoColaborador == "2" && data.document!!.get("estadoServicio")=="0"){ // Conductor (furgon  mayor a  500m )
                 if(rol == "acopiador-conductor"){
                     //se muestran agencia y recojo
                     if (data.tipo == "1"){
                         solicitudDisponible.tipo = "AGENCIA LIMA"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
+                        solicitudDisponible.data = data.document!!.toObject(PedidoAgencia::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         listDisponible!!.add(solicitudDisponible)
                     }
                     if (data.tipo == "2"){
                         solicitudDisponible.tipo = "CON RECOJO"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
+                        solicitudDisponible.data = data.document!!.toObject(PedidoCargo::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         listDisponible!!.add(solicitudDisponible)
                     }
                 }
@@ -228,7 +240,8 @@ class SolicitudesDisponibleFragment : Fragment() {
                         solicitudDisponible.tipo = "DOMICILIO"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
-                        solicitudDisponible.movilidad = data.document!!.get("tipoTransporte").toString()
+                        solicitudDisponible.data = data.document!!.toObject(PedidoDomicilio::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         /*if(data.document!!.get("estadoServicio") == "0"){
 
                         }
@@ -239,12 +252,16 @@ class SolicitudesDisponibleFragment : Fragment() {
                         solicitudDisponible.tipo = "AGENCIA LIMA"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
+                        solicitudDisponible.data = data.document!!.toObject(PedidoAgencia::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         listDisponible!!.add(solicitudDisponible)
                     }
                     if (data.tipo == "2"){
                         solicitudDisponible.tipo = "CON RECOJO"
                         solicitudDisponible.tiempo = data.tiempo!!.substring(11,19)
                         solicitudDisponible.lugar = data.recoger!!
+                        solicitudDisponible.data = data.document!!.toObject(PedidoCargo::class.java)
+                        solicitudDisponible.idDocument = data.document!!.id
                         listDisponible!!.add(solicitudDisponible)
                     }
                 }
@@ -258,7 +275,7 @@ class SolicitudesDisponibleFragment : Fragment() {
 
     }
 
-    private fun initAdapter(){
+    private fun initAdapter(view:View){
 
         adapter!!.context = context!!
         adapter!!.list = listDisponible

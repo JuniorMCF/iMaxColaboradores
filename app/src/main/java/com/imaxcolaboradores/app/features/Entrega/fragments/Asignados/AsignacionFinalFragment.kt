@@ -1,4 +1,4 @@
-package com.imaxcolaboradores.app.features.Entrega.fragments
+package com.imaxcolaboradores.app.features.Entrega.fragments.Asignados
 
 
 import android.os.Bundle
@@ -12,20 +12,14 @@ import com.imaxcolaboradores.app.R
 /**
  * A simple [Fragment] subclass.
  */
-class DetalleSolicitudFinal : Fragment() {
-
+class AsignacionFinalFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_detalle_solicitud_final, container, false)
-
-
-
-
-        return view
+        return inflater.inflate(R.layout.fragment_asignacion_final, container, false)
     }
 
 

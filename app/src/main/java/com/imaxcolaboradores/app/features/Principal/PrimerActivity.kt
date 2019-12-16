@@ -23,7 +23,7 @@ class PrimerActivity : AppCompatActivity() {
     var database:FirebaseFirestore? = null
     var pedidoList = ArrayList<Pedido>()
     var historialList = ArrayList<Pedido>()
-    var PendienteList = ArrayList<Pedido>()
+    var pendienteList = ArrayList<Pedido>()
     var adapter : PedidosAdapter? = null
     lateinit var activadofragment : ActivoFragment
     lateinit var solisitudesgrafment : SolicitudesFragment

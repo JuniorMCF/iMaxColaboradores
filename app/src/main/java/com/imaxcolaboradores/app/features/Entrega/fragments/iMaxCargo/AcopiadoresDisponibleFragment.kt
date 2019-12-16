@@ -1,4 +1,4 @@
-package com.imaxcolaboradores.app.features.Acopiadores.fragments
+package com.imaxcolaboradores.app.features.Entrega.fragments.iMaxCargo
 
 
 import android.os.Bundle
@@ -12,14 +12,14 @@ import com.imaxcolaboradores.app.R
 /**
  * A simple [Fragment] subclass.
  */
-class AcopiadoresDetallePedidoFragment : Fragment() {
+class AcopiadoresDisponibleFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_acopiadores_detalle_pedido, container, false)
+        return inflater.inflate(R.layout.fragment_acopiadores_disponible, container, false)
     }
 
 

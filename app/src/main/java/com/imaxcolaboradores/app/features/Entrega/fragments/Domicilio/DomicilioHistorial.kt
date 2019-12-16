@@ -1,4 +1,4 @@
-package com.imaxcolaboradores.app.features.Acopiadores.fragments
+package com.imaxcolaboradores.app.features.Entrega.fragments.Domicilio
 
 
 import android.os.Bundle
@@ -12,14 +12,14 @@ import com.imaxcolaboradores.app.R
 /**
  * A simple [Fragment] subclass.
  */
-class AgenciaEntregueFragment : Fragment() {
+class DomicilioHistorial : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_agencia_entregue, container, false)
+        return inflater.inflate(R.layout.fragment_domicilio_historial, container, false)
     }
 
 

@@ -2,19 +2,17 @@ package com.imaxcolaboradores.app.features.Principal.Adapters
 
 import android.content.Context
 import android.content.Intent
-import android.view.ContextThemeWrapper
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 
 import androidx.recyclerview.widget.RecyclerView
 import com.imaxcolaboradores.app.R
-import com.imaxcolaboradores.app.features.Entrega.EntregaDisponibleActivity
+import com.imaxcolaboradores.app.features.Entrega.SolicitudActivity
 
 import com.imaxcolaboradores.app.models.SolicitudesDisponibles
 import kotlinx.android.synthetic.main.cardview_disponible.view.*
-import kotlinx.android.synthetic.main.fragment_solicitudes_disponible.view.*
 
 
 class DisponiblesAdapter: RecyclerView.Adapter<DisponiblesAdapter.MyViewHolder>() {
@@ -40,8 +38,10 @@ class DisponiblesAdapter: RecyclerView.Adapter<DisponiblesAdapter.MyViewHolder>(
             holder.itemView.etEntregaDisponible.text  = ""
         }
         holder.itemView.cv_disponible.setOnClickListener{
-            val intent = Intent(context , EntregaDisponibleActivity::class.java)
-            intent.putExtra("pedidoDisponible",list!![position])
+            val intent = Intent(context , SolicitudActivity::class.java)
+            val bundle = Bundle()
+            bundle.putSerializable("pedidoDisponible",list!![position])
+            intent.putExtra("bundle",bundle)
             context!!.startActivity(intent)
         }
 

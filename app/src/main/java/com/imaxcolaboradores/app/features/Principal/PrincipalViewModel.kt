@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.imaxcolaboradores.app.models.SolicitudesDisponibles
 import com.imaxcolaboradores.app.models.SolicitudesHistorial
-import com.imaxcolaboradores.app.models.SolicitudesPendientes
 
 class PrincipalViewModel: ViewModel() {
     val disponibleSuccess = MutableLiveData<Any>()
@@ -12,7 +11,7 @@ class PrincipalViewModel: ViewModel() {
     val historialSuccess = MutableLiveData<Any>()
 
     private var disponibleList : MutableList<SolicitudesDisponibles> = ArrayList()
-    private var pendienteList: MutableList<SolicitudesPendientes> = ArrayList()
+    //private var pendienteList: MutableList<SolicitudesPendientes> = ArrayList()
     private var historialList: MutableList<SolicitudesHistorial> = ArrayList()
 
     fun getDisponibles(){
@@ -20,15 +19,15 @@ class PrincipalViewModel: ViewModel() {
     }
 
     fun getPendiente(){
-        val pendiente1= SolicitudesPendientes("","Arequipa","10min")
-        val pendiente2= SolicitudesPendientes("","San Juan del Lurigancho","3min")
-        val pendiente3= SolicitudesPendientes("","Independencia","10min")
+        //val pendiente1= SolicitudesPendientes()
+        //val pendiente2= SolicitudesPendientes()
+        //val pendiente3= SolicitudesPendientes()
 
-        pendienteList.add(pendiente1)
-        pendienteList.add(pendiente2)
-        pendienteList.add(pendiente3)
+        //pendienteList.add(pendiente1)
+        //pendienteList.add(pendiente2)
+        //pendienteList.add(pendiente3)
 
-        pendienteSuccess.postValue(pendienteList)
+        //pendienteSuccess.postValue(pendienteList)
 
     }
 

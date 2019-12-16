@@ -32,7 +32,6 @@ class LoginActivity : AppCompatActivity() {
         //setObservers()
         setOnClick()
 
-        //TODO("sin view model")
 
         if(auth.currentUser != null){
             val intent = Intent(this,PrimerActivity::class.java)

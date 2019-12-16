@@ -1,6 +1,8 @@
 package com.imaxclientes.app.models
 
-import com.google.android.gms.maps.model.LatLng
+
+
+import com.imaxcolaboradores.app.models.LatLng
 import java.io.Serializable
 import java.util.*
 import kotlin.collections.ArrayList

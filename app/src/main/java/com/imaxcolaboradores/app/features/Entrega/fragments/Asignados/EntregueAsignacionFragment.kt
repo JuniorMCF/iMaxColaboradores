@@ -1,4 +1,4 @@
-package com.imaxcolaboradores.app.features.Acopiadores.fragments
+package com.imaxcolaboradores.app.features.Entrega.fragments.Asignados
 
 
 import android.os.Bundle

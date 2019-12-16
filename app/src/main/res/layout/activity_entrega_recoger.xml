@@ -47,10 +47,10 @@
                     map:layout_constraintStart_toStartOf="parent"
                     map:layout_constraintTop_toTopOf="parent"
                     map:layout_constraintVertical_bias="1.0"
-                    tools:context=".features.Entrega.EntregaDisponibleActivity" />
+                    tools:context=".features.Entrega.SolicitudActivity" />
 
                 <TextView
-                    android:id="@+id/etDistancia"
+                    android:id="@+id/txtDistancia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8.3km"
@@ -68,26 +68,26 @@
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:text="Costo:"
                     android:textSize="@dimen/_12ssp"
-                    map:layout_constraintBottom_toBottomOf="@+id/etDistancia"
-                    map:layout_constraintEnd_toStartOf="@+id/etCosto"
+                    map:layout_constraintBottom_toBottomOf="@+id/txtDistancia"
+                    map:layout_constraintEnd_toStartOf="@+id/txtCosto"
                     map:layout_constraintHorizontal_bias="1.0"
-                    map:layout_constraintStart_toEndOf="@+id/etDistancia"
-                    map:layout_constraintTop_toTopOf="@+id/etDistancia"
+                    map:layout_constraintStart_toEndOf="@+id/txtDistancia"
+                    map:layout_constraintTop_toTopOf="@+id/txtDistancia"
                     map:layout_constraintVertical_bias="0.0" />
 
                 <TextView
-                    android:id="@+id/etCosto"
+                    android:id="@+id/txtCosto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="S/15.00"
                     android:textColor="#454F63"
                     android:textSize="@dimen/_12ssp"
                     android:textStyle="bold"
-                    map:layout_constraintBottom_toBottomOf="@+id/etDistancia"
+                    map:layout_constraintBottom_toBottomOf="@+id/txtDistancia"
                     map:layout_constraintEnd_toEndOf="@+id/map"
                     map:layout_constraintHorizontal_bias="1.0"
                     map:layout_constraintStart_toStartOf="parent"
-                    map:layout_constraintTop_toTopOf="@+id/etDistancia" />
+                    map:layout_constraintTop_toTopOf="@+id/txtDistancia" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline"
@@ -125,14 +125,14 @@
                     android:textColor="#454F63"
                     android:textSize="@dimen/_12ssp"
                     android:textStyle="bold"
-                    map:layout_constraintBottom_toTopOf="@+id/etObjeto"
+                    map:layout_constraintBottom_toTopOf="@+id/txtObjeto"
                     map:layout_constraintEnd_toEndOf="parent"
                     map:layout_constraintHorizontal_bias="0.0"
                     map:layout_constraintStart_toStartOf="@+id/map"
-                    map:layout_constraintTop_toBottomOf="@+id/etDistancia" />
+                    map:layout_constraintTop_toBottomOf="@+id/txtDistancia" />
 
                 <TextView
-                    android:id="@+id/etObjeto"
+                    android:id="@+id/txtObjeto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Objeto"
@@ -172,7 +172,7 @@
                     android:layout_width="@dimen/_10sdp"
                     android:layout_height="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:background="@drawable/background_circle2"
                     map:layout_constraintBottom_toTopOf="@+id/guideline2"
                     map:layout_constraintEnd_toEndOf="parent"
@@ -227,7 +227,7 @@
                     map:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/etDomicilio"
+                    android:id="@+id/txtDomicilio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
@@ -270,21 +270,21 @@
                     map:layout_constraintTop_toTopOf="@+id/button2" />
 
                 <TextView
-                    android:id="@+id/etRecogerDireccion"
+                    android:id="@+id/txtRecogerDireccion"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:text="Av Arequipa 1386 Lima"
                     android:textSize="@dimen/_12ssp"
-                    map:layout_constraintBottom_toTopOf="@+id/etRecogerReferencia"
+                    map:layout_constraintBottom_toTopOf="@+id/txtRecogerReferencia"
                     map:layout_constraintEnd_toEndOf="parent"
                     map:layout_constraintHorizontal_bias="0.0"
                     map:layout_constraintStart_toStartOf="@+id/textView11"
                     map:layout_constraintTop_toBottomOf="@+id/textView11" />
 
                 <TextView
-                    android:id="@+id/etRecogerReferencia"
+                    android:id="@+id/txtRecogerReferencia"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Edificio Elisa Dpto 705"
@@ -293,26 +293,26 @@
                     map:layout_constraintBottom_toTopOf="@+id/view"
                     map:layout_constraintEnd_toEndOf="parent"
                     map:layout_constraintHorizontal_bias="0.0"
-                    map:layout_constraintStart_toStartOf="@+id/etRecogerDireccion"
-                    map:layout_constraintTop_toBottomOf="@+id/etRecogerDireccion" />
+                    map:layout_constraintStart_toStartOf="@+id/txtRecogerDireccion"
+                    map:layout_constraintTop_toBottomOf="@+id/txtRecogerDireccion" />
 
                 <TextView
-                    android:id="@+id/etEntregarDireccion"
+                    android:id="@+id/txtEntregarDireccion"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:maxLines="2"
                     android:text="Av. Gerardo Unger 1203, San martin de Porras"
                     android:textSize="@dimen/_12ssp"
-                    map:layout_constraintBottom_toTopOf="@+id/etEntregarReferencia"
+                    map:layout_constraintBottom_toTopOf="@+id/txtEntregarReferencia"
                     map:layout_constraintEnd_toStartOf="@+id/imageView11"
                     map:layout_constraintStart_toStartOf="@+id/textView12"
                     map:layout_constraintTop_toBottomOf="@+id/textView12"
                     map:layout_goneMarginEnd="@dimen/_16sdp" />
 
                 <TextView
-                    android:id="@+id/etEntregarReferencia"
+                    android:id="@+id/txtEntregarReferencia"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:maxLines="2"
@@ -322,8 +322,8 @@
                     map:layout_constraintBottom_toTopOf="@+id/view3"
                     map:layout_constraintEnd_toStartOf="@+id/imageView11"
                     map:layout_constraintHorizontal_bias="0.0"
-                    map:layout_constraintStart_toStartOf="@+id/etEntregarDireccion"
-                    map:layout_constraintTop_toBottomOf="@+id/etEntregarDireccion"
+                    map:layout_constraintStart_toStartOf="@+id/txtEntregarDireccion"
+                    map:layout_constraintTop_toBottomOf="@+id/txtEntregarDireccion"
                     map:layout_constraintVertical_bias="0.0"
                     map:layout_goneMarginEnd="@dimen/_16sdp" />
 
@@ -378,7 +378,7 @@
                     android:layout_width="@dimen/_15sdp"
                     android:layout_height="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_24sdp"
-                    android:background="@drawable/background_circle_yellow"
+                    android:background="@drawable/background_circle_white"
                     map:layout_constraintBottom_toTopOf="@+id/button3"
                     map:layout_constraintEnd_toStartOf="@+id/guideline3"
                     map:layout_constraintStart_toStartOf="parent"
@@ -415,12 +415,13 @@
                     android:layout_width="@dimen/_15sdp"
                     android:layout_height="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_24sdp"
+                    android:background="@drawable/background_circle_yellow"
                     map:layout_constraintBottom_toTopOf="@+id/button3"
                     map:layout_constraintEnd_toStartOf="@+id/guideline9"
                     map:layout_constraintStart_toStartOf="@+id/guideline8"
                     map:layout_constraintTop_toTopOf="@+id/imageView3"
                     map:layout_constraintVertical_bias="0.0"
-                    map:srcCompat="@drawable/background_circle_white" />
+                     />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline8"

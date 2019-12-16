@@ -16,9 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.Entrega.EntregaRealizadaActivity"></activity>
-        <activity android:name=".features.Entrega.EntregaRecogerActivity" />
-        <activity android:name=".features.Entrega.EntregaPendienteActivity" />
+        <activity android:name=".features.Entrega.DomicilioRealizadaActivity"></activity>
+        <activity android:name=".features.Entrega.DomicilioEntregarActivity" />
+        <activity android:name=".features.Entrega.DomicilioRecogerActivity" />
         <activity android:name=".features.Principal.PrimerActivity" />
         <activity
             android:name=".principal.primerActivity"
@@ -36,7 +36,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".features.Entrega.EntregaDisponibleActivity"
+            android:name=".features.Entrega.SolicitudActivity"
             android:label="@string/title_activity_entrega" />
         <activity
             android:name=".features.Principal.PrincipalActivity"
