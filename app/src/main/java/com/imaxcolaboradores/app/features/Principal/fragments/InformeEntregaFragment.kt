@@ -1,4 +1,4 @@
-package com.imaxcolaboradores.app.features.Principal.fragments.informesfragment
+package com.imaxcolaboradores.app.features.Principal.fragments
 
 
 import android.os.Bundle
