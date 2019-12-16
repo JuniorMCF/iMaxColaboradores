@@ -45,9 +45,10 @@
                     app:layout_constraintTop_toBottomOf="@+id/mapView">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraintLayout3"
+                        android:id="@+id/clAceptar1"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:visibility="visible">
 
                         <TextView
                             android:id="@+id/txtDomicilio"
@@ -112,6 +113,70 @@
                             app:layout_constraintStart_toEndOf="@+id/txtDistancia"
                             app:layout_constraintTop_toTopOf="@+id/txtDistancia"
                             app:layout_constraintVertical_bias="0.0" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clAceptar2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtServicio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Servicio:"
+                            app:layout_constraintBottom_toTopOf="@+id/txtDetalle"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.136"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtDetalle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Detalle:"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/txtServicio"
+                            app:layout_constraintTop_toBottomOf="@+id/txtServicio" />
+
+                        <TextView
+                            android:id="@+id/txtServicioData"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtServicio"
+                            app:layout_constraintEnd_toStartOf="@+id/imgAgencia"
+                            app:layout_constraintHorizontal_bias="0.55"
+                            app:layout_constraintStart_toEndOf="@+id/txtServicio"
+                            app:layout_constraintTop_toTopOf="@+id/txtServicio" />
+
+                        <TextView
+                            android:id="@+id/txtDetalleData"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtDetalle"
+                            app:layout_constraintEnd_toStartOf="@+id/imgAgencia"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/txtServicioData"
+                            app:layout_constraintTop_toTopOf="@+id/txtDetalle" />
+
+                        <ImageView
+                            android:id="@+id/imgAgencia"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtDetalleData"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtServicioData"
+                            app:srcCompat="@drawable/ic_camara_magenta" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
 
@@ -258,7 +323,6 @@
                             android:layout_marginTop="@dimen/_4sdp"
                             android:layout_marginEnd="@dimen/_16sdp"
                             android:textSize="@dimen/_12ssp"
-                            android:text="Av. Gerardo Unger 1203, San martin de Porras"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="@+id/textView57"
@@ -270,7 +334,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_4sdp"
                             android:layout_marginEnd="@dimen/_16sdp"
-                            android:text="Almacén Central del SUR"
                             android:textSize="@dimen/_12ssp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -288,6 +351,19 @@
                             app:layout_constraintEnd_toEndOf="@+id/imageView17"
                             app:layout_constraintStart_toStartOf="@+id/imageView17"
                             app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_agencias_aceptar"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/textView57"
+                            app:layout_constraintTop_toBottomOf="@+id/textView57"
+                            tools:listitem="@layout/cardview_entregue_agencia" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
 
@@ -434,13 +510,13 @@
                     android:background="@drawable/button_border"
                     android:text="Aceptar"
                     android:textColor="#fff"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnCancelarPendiente"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnCancelarDisponible"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/btnCancelarPendiente"
-                    app:layout_constraintTop_toTopOf="@+id/btnCancelarPendiente" />
+                    app:layout_constraintStart_toEndOf="@+id/btnCancelarDisponible"
+                    app:layout_constraintTop_toTopOf="@+id/btnCancelarDisponible" />
 
                 <ImageView
-                    android:id="@+id/btnCancelarPendiente"
+                    android:id="@+id/btnCancelarDisponible"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_16sdp"

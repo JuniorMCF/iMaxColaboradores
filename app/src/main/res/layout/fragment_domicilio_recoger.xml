@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".features.Entrega.fragments.Domicilio.DomicilioRecogerFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:map="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -59,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:text="8.3km"
                         android:textSize="@dimen/_12ssp"
-                        map:layout_constraintBottom_toTopOf="@+id/textView8"
+                        map:layout_constraintBottom_toTopOf="@+id/txtTipoServicio"
                         map:layout_constraintEnd_toEndOf="parent"
                         map:layout_constraintHorizontal_bias="0.0"
                         map:layout_constraintStart_toStartOf="@+id/mapView"
@@ -120,7 +118,7 @@
                         map:layout_constraintVertical_bias="1.0" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/txtTipoServicio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="DOMICILIO"
@@ -144,7 +142,7 @@
                         map:layout_constraintEnd_toEndOf="@+id/mapView"
                         map:layout_constraintHorizontal_bias="1.0"
                         map:layout_constraintStart_toStartOf="@+id/txtCosto"
-                        map:layout_constraintTop_toTopOf="@+id/textView8"
+                        map:layout_constraintTop_toTopOf="@+id/txtTipoServicio"
                         map:srcCompat="@drawable/ic_camara_magenta" />
 
                     <TextView
@@ -156,8 +154,8 @@
                         map:layout_constraintBottom_toTopOf="@+id/guideline"
                         map:layout_constraintEnd_toEndOf="parent"
                         map:layout_constraintHorizontal_bias="0.0"
-                        map:layout_constraintStart_toStartOf="@+id/textView8"
-                        map:layout_constraintTop_toBottomOf="@+id/textView8" />
+                        map:layout_constraintStart_toStartOf="@+id/txtTipoServicio"
+                        map:layout_constraintTop_toBottomOf="@+id/txtTipoServicio" />
 
                     <Button
                         android:id="@+id/button"
@@ -251,11 +249,11 @@
                         android:textColor="#454F63"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold"
-                        map:layout_constraintBottom_toBottomOf="@+id/textView8"
+                        map:layout_constraintBottom_toBottomOf="@+id/txtTipoServicio"
                         map:layout_constraintEnd_toEndOf="parent"
                         map:layout_constraintHorizontal_bias="0.0"
-                        map:layout_constraintStart_toEndOf="@+id/textView8"
-                        map:layout_constraintTop_toTopOf="@+id/textView8" />
+                        map:layout_constraintStart_toEndOf="@+id/txtTipoServicio"
+                        map:layout_constraintTop_toTopOf="@+id/txtTipoServicio" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -319,7 +317,7 @@
                         android:maxLines="2"
                         android:text="Av. Gerardo Unger 1203, San martin de Porras"
                         android:textSize="@dimen/_12ssp"
-                        map:layout_constraintBottom_toTopOf="@+id/etEntregarReferencia"
+                        map:layout_constraintBottom_toTopOf="@+id/txtEntregarReferencia"
                         map:layout_constraintEnd_toEndOf="parent"
                         map:layout_constraintHorizontal_bias="0.0"
                         map:layout_constraintStart_toStartOf="@+id/textView12"
@@ -327,7 +325,7 @@
                         map:layout_goneMarginEnd="@dimen/_16sdp" />
 
                     <TextView
-                        android:id="@+id/etEntregarReferencia"
+                        android:id="@+id/txtEntregarReferencia"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -573,6 +571,18 @@
                         map:layout_constraintHorizontal_bias="1.0"
                         map:layout_constraintStart_toStartOf="@+id/imageView3"
                         map:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_agencias_recoger"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        map:layout_constraintBottom_toTopOf="@+id/guideline2"
+                        map:layout_constraintEnd_toEndOf="parent"
+                        map:layout_constraintStart_toStartOf="@+id/textView12"
+                        map:layout_constraintTop_toBottomOf="@+id/textView12"
+                        tools:listitem="@layout/cardview_entregue_agencia"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <FrameLayout

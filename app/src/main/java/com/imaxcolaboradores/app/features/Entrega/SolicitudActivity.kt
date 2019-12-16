@@ -27,7 +27,7 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var pedidoCargo: PedidoCargo
     private lateinit var pedidoDomicilio: PedidoDomicilio
     var database:FirebaseFirestore?=null
-
+    var rol = "motorizado"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entrega_disponible)
@@ -49,16 +49,16 @@ class SolicitudActivity : AppCompatActivity() {
             pedidoDomicilio = solicitud.data!! as PedidoDomicilio
             if(pedidoDomicilio.estadoServicio == "0"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioAceptarFragment(),"domicilio_aceptar").commitAllowingStateLoss()
+                    DomicilioAceptarFragment(),"domicilio_aceptar").commit()
             }else if(pedidoDomicilio.estadoServicio == "1"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioRecogerFragment(),"domicilio_recoger").commitAllowingStateLoss()
+                    DomicilioRecogerFragment(),"domicilio_recoger").commit()
             }else if(pedidoDomicilio.estadoServicio == "2"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioEntregarFragment(),"domicilio_entregar").commitAllowingStateLoss()
+                    DomicilioEntregarFragment(),"domicilio_entregar").commit()
             }else if(pedidoDomicilio.estadoServicio == "3" || pedidoDomicilio.estadoServicio == "4" || pedidoDomicilio.estadoServicio == "5"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioRealizadoFragment(),"domicilio_realizado").commitAllowingStateLoss()
+                    DomicilioRealizadoFragment(),"domicilio_realizado").commit()
             }
 
 
@@ -66,48 +66,48 @@ class SolicitudActivity : AppCompatActivity() {
             pedidoAgencia = solicitud.data!! as PedidoAgencia
             if(pedidoAgencia.estadoServicio == "0"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioAceptarFragment(),"domicilio_aceptar").commitAllowingStateLoss()
+                    DomicilioAceptarFragment(),"domicilio_aceptar").commit()
             }else if(pedidoAgencia.estadoServicio == "1"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioRecogerFragment(),"domicilio_recoger").commitAllowingStateLoss()
+                    DomicilioRecogerFragment(),"domicilio_recoger").commit()
             }else if(pedidoAgencia.estadoServicio == "2"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioEntregarFragment(),"domicilio_entregar").commitAllowingStateLoss()
+                    DomicilioEntregarFragment(),"domicilio_entregar").commit()
             }else if(pedidoAgencia.estadoServicio == "3" || pedidoAgencia.estadoServicio == "4" || pedidoAgencia.estadoServicio == "5"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioRealizadoFragment(),"domicilio_realizado").commitAllowingStateLoss()
+                    DomicilioRealizadoFragment(),"domicilio_realizado").commit()
             }
 
         }else if(solicitud.tipo=="CON RECOJO"){
             pedidoCargo = solicitud.data!! as PedidoCargo
             if(pedidoCargo.estadoServicio == "0"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioAceptarFragment(),"domicilio_aceptar").commitAllowingStateLoss()
+                    DomicilioAceptarFragment(),"domicilio_aceptar").commit()
             }else if(pedidoCargo.estadoServicio == "1"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioRecogerFragment(),"domicilio_recoger").commitAllowingStateLoss()
+                    DomicilioRecogerFragment(),"domicilio_recoger").commit()
             }else if(pedidoCargo.estadoServicio == "2"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioEntregarFragment(),"domicilio_entregar").commitAllowingStateLoss()
+                    DomicilioEntregarFragment(),"domicilio_entregar").commit()
             }else if(pedidoCargo.estadoServicio == "3" || pedidoCargo.estadoServicio == "4" || pedidoCargo.estadoServicio == "5"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioRealizadoFragment(),"domicilio_realizado").commitAllowingStateLoss()
+                    DomicilioRealizadoFragment(),"domicilio_realizado").commit()
             }
 
         }else if(solicitud.tipo=="SIN RECOJO"){
             pedidoCargo = solicitud.data!! as PedidoCargo
             if(pedidoCargo.estadoServicio == "0"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioAceptarFragment(),"domicilio_aceptar").commitAllowingStateLoss()
+                    DomicilioAceptarFragment(),"domicilio_aceptar").commit()
             }else if(pedidoCargo.estadoServicio == "1"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioRecogerFragment(),"domicilio_recoger").commitAllowingStateLoss()
+                    DomicilioRecogerFragment(),"domicilio_recoger").commit()
             }else if(pedidoCargo.estadoServicio == "2"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioEntregarFragment(),"domicilio_entregar").commitAllowingStateLoss()
+                    DomicilioEntregarFragment(),"domicilio_entregar").commit()
             }else if(pedidoCargo.estadoServicio == "3" || pedidoCargo.estadoServicio == "4" || pedidoCargo.estadoServicio == "5"){
                 supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,
-                    DomicilioRealizadoFragment(),"domicilio_realizado").commitAllowingStateLoss()
+                    DomicilioRealizadoFragment(),"domicilio_realizado").commit()
             }
 
         }
