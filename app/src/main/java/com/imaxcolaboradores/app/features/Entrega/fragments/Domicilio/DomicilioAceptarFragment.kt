@@ -22,21 +22,9 @@ import com.imaxcolaboradores.app.features.Entrega.fragments.RechazoPedidoFragmen
 import com.imaxcolaboradores.app.features.Principal.Adapters.AgenciasListAdapter
 import com.imaxcolaboradores.app.models.AgenciasCheck
 import com.imaxcolaboradores.app.models.SolicitudesDisponibles
-import kotlinx.android.synthetic.main.activity_entrega_recoger.*
-import kotlinx.android.synthetic.main.activity_entrega_recoger.txtEntregarDireccion
-import kotlinx.android.synthetic.main.activity_entrega_recoger.txtRecogerDireccion
-import kotlinx.android.synthetic.main.fragment_agencia_entregue.*
-import kotlinx.android.synthetic.main.fragment_agencia_entregue.etObjetoAgencia
-import kotlinx.android.synthetic.main.fragment_agencia_entregue.view.*
-import kotlinx.android.synthetic.main.fragment_agencia_realizada.*
-import kotlinx.android.synthetic.main.fragment_domicilio_aceptar.*
-import kotlinx.android.synthetic.main.fragment_domicilio_aceptar.txtCosto
-import kotlinx.android.synthetic.main.fragment_domicilio_aceptar.txtDistancia
-import kotlinx.android.synthetic.main.fragment_domicilio_aceptar.txtDomicilio
-import kotlinx.android.synthetic.main.fragment_domicilio_aceptar.txtObjeto
+
 import kotlinx.android.synthetic.main.fragment_domicilio_aceptar.view.*
-import kotlinx.android.synthetic.main.fragment_domicilio_recoger.*
-import kotlinx.android.synthetic.main.fragment_entregue_asignacion.*
+
 
 /**
  * A simple [Fragment] subclass.
@@ -83,7 +71,7 @@ class DomicilioAceptarFragment : Fragment(), OnMapReadyCallback {
             view.txtCosto.text = pedidoDomicilio.costoServicio
             view.txtDirRecogerEn.text = pedidoDomicilio.recogerEn
             view.txtRefRecogerEn.text = pedidoDomicilio.referenciaRecoger1
-            view. txtDirEntregarEn.text = pedidoDomicilio.dejarEn
+            view.txtDirEntregarEn.text = pedidoDomicilio.dejarEn
             view.txtRefEntregarEn.text = pedidoDomicilio.referenciaDejar
 
         }else if(solicitud.tipo=="AGENCIA LIMA"){

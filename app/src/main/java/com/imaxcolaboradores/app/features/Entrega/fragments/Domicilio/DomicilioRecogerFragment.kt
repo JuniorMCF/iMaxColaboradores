@@ -73,6 +73,7 @@ class DomicilioRecogerFragment : Fragment() , OnMapReadyCallback{
             view.txtDistancia.text = "${pedidoDomicilio.distancia1}"
             view.txtCosto.text = "${pedidoDomicilio.costoServicio}"
             view.txtObjeto.text = "Objeto"
+            view.imgCancelarPendiente.visibility = View.VISIBLE
 
         }else if(solicitud.tipo=="AGENCIA LIMA"){
             pedidoAgencia = solicitud.data!! as PedidoAgencia
@@ -84,7 +85,7 @@ class DomicilioRecogerFragment : Fragment() , OnMapReadyCallback{
             view.txtDistancia.text = "${pedidoAgencia.distancia1!!}km"
             view.txtCosto.text = "${pedidoAgencia.costoServicio!!}"
 
-
+            view.btnAceptarPendiente.text = "LLEGUÉ!!"
             view.rv_agencias_recoger.visibility = View.VISIBLE
             //iniciamos el recyclerview
             view.rv_agencias_recoger.setHasFixedSize(true)
@@ -116,7 +117,7 @@ class DomicilioRecogerFragment : Fragment() , OnMapReadyCallback{
             view.txtDistancia.text = "${pedidoCargo.distancia1!!}"
             view.txtCosto.text = "${pedidoCargo.costoServicio!!}"
             view.txtObjeto.text = "Objeto ${pedidoCargo.paqueteCargoSinRecojo.size}"
-
+            view.btnAceptarPendiente.text = "LLEGUÉ!!"
             //recyclerview
             view.rv_agencias_recoger.visibility = View.VISIBLE
             //iniciamos el recyclerview
@@ -145,6 +146,7 @@ class DomicilioRecogerFragment : Fragment() , OnMapReadyCallback{
             view.txtRecogerDireccion.text = pedidoCargo.recogerEn!!
             view.txtRecogerReferencia.text = pedidoCargo.referenciaRecoger1!!
             view.txtEntregarDireccion.text = ""//pedidoCargo.dejarEn!!
+            view.btnAceptarPendiente.text = "LLEGUÉ!!"
             //txtDomicilio.text = pedidoDomicilio.
             view.txtDistancia.text = "${pedidoCargo.distancia1!!}"
             view.txtCosto.text = "${pedidoCargo.costoServicio!!}"
@@ -204,12 +206,8 @@ class DomicilioRecogerFragment : Fragment() , OnMapReadyCallback{
                             .set(pedidoDomicilio!!)
                             .addOnSuccessListener { Log.d("aca", "DocumentSnapshot successfully written!")
                                 dialog.dismiss()
-                                val bundle = Bundle()
-                                val fragment = DomicilioEntregarFragment()
-                                bundle.putSerializable("pedidoRecojo", solicitud)
-                                fragment.arguments = bundle
                                 (activity as SolicitudActivity).supportFragmentManager.beginTransaction()
-                                    .replace(R.id.fl_solicitud, fragment, "domicilio_entrega").commit()
+                                    .replace(R.id.fl_solicitud,  DomicilioEntregarFragment(), "domicilio_entrega").commit()
                             }
                             .addOnFailureListener { e -> Log.w("aca", "Error writing document", e)
 
@@ -225,12 +223,8 @@ class DomicilioRecogerFragment : Fragment() , OnMapReadyCallback{
                             .set(pedidoAgencia!!)
                             .addOnSuccessListener { Log.d("aca", "DocumentSnapshot successfully written!")
                                 dialog.dismiss()
-                                val bundle = Bundle()
-                                val fragment = DomicilioEntregarFragment()
-                                bundle.putSerializable("pedidoRecojo", solicitud)
-                                fragment.arguments = bundle
                                 (activity as SolicitudActivity).supportFragmentManager.beginTransaction()
-                                    .replace(R.id.fl_solicitud, fragment, "domicilio_entrega").commit()
+                                    .replace(R.id.fl_solicitud,  DomicilioEntregarFragment(), "domicilio_entrega").commit()
                             }
                             .addOnFailureListener { e -> Log.w("aca", "Error writing document", e)
 
@@ -243,12 +237,9 @@ class DomicilioRecogerFragment : Fragment() , OnMapReadyCallback{
                             .set(pedidoCargo!!)
                             .addOnSuccessListener { Log.d("aca", "DocumentSnapshot successfully written!")
                                 dialog.dismiss()
-                                val bundle = Bundle()
-                                val fragment = DomicilioEntregarFragment()
-                                bundle.putSerializable("pedidoRecojo", solicitud)
-                                fragment.arguments = bundle
+
                                 (activity as SolicitudActivity).supportFragmentManager.beginTransaction()
-                                    .replace(R.id.fl_solicitud, fragment, "domicilio_entrega").commit()
+                                    .replace(R.id.fl_solicitud,  DomicilioEntregarFragment(), "domicilio_entrega").commit()
                             }
                             .addOnFailureListener { e -> Log.w("aca", "Error writing document", e)
 
@@ -261,12 +252,8 @@ class DomicilioRecogerFragment : Fragment() , OnMapReadyCallback{
                             .set(pedidoCargo!!)
                             .addOnSuccessListener { Log.d("aca", "DocumentSnapshot successfully written!")
                                 dialog.dismiss()
-                                val bundle = Bundle()
-                                val fragment = DomicilioEntregarFragment()
-                                bundle.putSerializable("pedidoRecojo", solicitud)
-                                fragment.arguments = bundle
                                 (activity as SolicitudActivity).supportFragmentManager.beginTransaction()
-                                    .replace(R.id.fl_solicitud, fragment, "domicilio_entrega").commit()
+                                    .replace(R.id.fl_solicitud,  DomicilioEntregarFragment(), "domicilio_entrega").commit()
                             }
                             .addOnFailureListener { e -> Log.w("aca", "Error writing document", e)
 

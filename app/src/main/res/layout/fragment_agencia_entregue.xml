@@ -49,46 +49,6 @@
                     map:layout_constraintVertical_bias="1.0"
                     tools:context=".features.Entrega.SolicitudActivity" />
 
-                <TextView
-                    android:id="@+id/etDistanciaAgencia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="8.3km"
-                    android:textSize="@dimen/_12ssp"
-                    map:layout_constraintBottom_toTopOf="@+id/textView8"
-                    map:layout_constraintEnd_toEndOf="parent"
-                    map:layout_constraintHorizontal_bias="0.0"
-                    map:layout_constraintStart_toStartOf="@+id/map"
-                    map:layout_constraintTop_toTopOf="@+id/guideline4" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_8sdp"
-                    android:text="Costo:"
-                    android:textSize="@dimen/_12ssp"
-                    map:layout_constraintBottom_toBottomOf="@+id/etDistanciaAgencia"
-                    map:layout_constraintEnd_toStartOf="@+id/etCostoAgencia"
-                    map:layout_constraintHorizontal_bias="1.0"
-                    map:layout_constraintStart_toEndOf="@+id/etDistanciaAgencia"
-                    map:layout_constraintTop_toTopOf="@+id/etDistanciaAgencia"
-                    map:layout_constraintVertical_bias="0.0" />
-
-                <TextView
-                    android:id="@+id/etCostoAgencia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="S/15.00"
-                    android:textColor="#454F63"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    map:layout_constraintBottom_toBottomOf="@+id/etDistanciaAgencia"
-                    map:layout_constraintEnd_toEndOf="@+id/map"
-                    map:layout_constraintHorizontal_bias="1.0"
-                    map:layout_constraintStart_toStartOf="parent"
-                    map:layout_constraintTop_toTopOf="@+id/etDistanciaAgencia" />
-
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline"
                     android:layout_width="wrap_content"
@@ -115,40 +75,12 @@
                     map:layout_constraintTop_toTopOf="parent"
                     map:layout_constraintVertical_bias="1.0" />
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginBottom="@dimen/_4sdp"
-                    android:text="DOMICILIO"
-                    android:textColor="#454F63"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    map:layout_constraintBottom_toTopOf="@+id/etObjetoAgencia"
-                    map:layout_constraintEnd_toEndOf="parent"
-                    map:layout_constraintHorizontal_bias="0.0"
-                    map:layout_constraintStart_toStartOf="@+id/map"
-                    map:layout_constraintTop_toBottomOf="@+id/etDistanciaAgencia" />
-
-                <TextView
-                    android:id="@+id/etObjetoAgencia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Objeto"
-                    android:textSize="@dimen/_12ssp"
-                    map:layout_constraintBottom_toTopOf="@+id/guideline"
-                    map:layout_constraintEnd_toEndOf="parent"
-                    map:layout_constraintHorizontal_bias="0.0"
-                    map:layout_constraintStart_toStartOf="@+id/textView8"
-                    map:layout_constraintTop_toBottomOf="@+id/textView8" />
-
                 <Button
                     android:id="@+id/button"
                     android:layout_width="@dimen/_10sdp"
                     android:layout_height="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:background="@drawable/background_circle"
                     map:layout_constraintBottom_toTopOf="@+id/view"
                     map:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +104,7 @@
                     android:layout_width="@dimen/_10sdp"
                     android:layout_height="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:background="@drawable/background_circle2"
                     map:layout_constraintBottom_toTopOf="@+id/guideline2"
                     map:layout_constraintEnd_toEndOf="parent"
@@ -225,21 +157,6 @@
                     map:layout_constraintGuide_begin="@dimen/_80sdp"
                     map:layout_constraintStart_toStartOf="parent"
                     map:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/etDomicilioAgencia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8sdp"
-                    android:text="D9999"
-                    android:textColor="#454F63"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    map:layout_constraintBottom_toBottomOf="@+id/textView8"
-                    map:layout_constraintEnd_toEndOf="parent"
-                    map:layout_constraintHorizontal_bias="0.0"
-                    map:layout_constraintStart_toEndOf="@+id/textView8"
-                    map:layout_constraintTop_toTopOf="@+id/textView8" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -493,25 +410,240 @@
                     map:layout_constraintStart_toEndOf="@+id/imageView9"
                     map:layout_constraintTop_toTopOf="@+id/imageView6" />
 
-                <FrameLayout
-                    android:id="@+id/container_rechazo_pedido"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:visibility="visible">
-
-                </FrameLayout>
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_entregue_agencia"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_4sdp"
                     android:layout_marginEnd="@dimen/_16sdp"
-                    android:layout_marginStart="@dimen/_4sdp"
-                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:visibility="gone"
                     map:layout_constraintBottom_toTopOf="@+id/guideline2"
                     map:layout_constraintEnd_toEndOf="parent"
                     map:layout_constraintStart_toStartOf="@+id/textView12"
                     map:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clTipoAgencia"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    map:layout_constraintBottom_toTopOf="@+id/guideline"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="@+id/guideline4">
+
+                    <Button
+                        android:id="@+id/btnDatosDestino2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:background="@drawable/background_button_login"
+                        android:paddingLeft="@dimen/_4sdp"
+                        android:paddingTop="@dimen/_1sdp"
+                        android:paddingRight="@dimen/_4sdp"
+                        android:paddingBottom="@dimen/_1sdp"
+                        android:text="Datos de Destino"
+                        android:textColor="#fff"
+                        map:layout_constraintBottom_toBottomOf="@+id/etObjetoAgencia"
+                        map:layout_constraintEnd_toEndOf="parent"
+                        map:layout_constraintHorizontal_bias="1.0"
+                        map:layout_constraintStart_toEndOf="@+id/etObjetoAgencia"
+                        map:layout_constraintTop_toTopOf="@+id/etObjetoAgencia" />
+
+                    <TextView
+                        android:id="@+id/etDomicilioAgencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="D9999"
+                        android:textColor="#454F63"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        map:layout_constraintBottom_toBottomOf="@+id/textView8"
+                        map:layout_constraintStart_toEndOf="@+id/textView8"
+                        map:layout_constraintTop_toTopOf="@+id/textView8" />
+
+                    <TextView
+                        android:id="@+id/etDistanciaAgencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="21dp"
+                        android:text="8.3km"
+                        android:textSize="@dimen/_12ssp"
+                        map:layout_constraintBottom_toTopOf="@+id/textView8"
+                        map:layout_constraintStart_toStartOf="parent"
+                        map:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/etObjetoAgencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Objeto"
+                        android:textSize="@dimen/_12ssp"
+                        map:layout_constraintBottom_toBottomOf="parent"
+                        map:layout_constraintStart_toStartOf="@+id/textView8"
+                        map:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:text="Costo:"
+                        android:textSize="@dimen/_12ssp"
+                        map:layout_constraintBottom_toBottomOf="@+id/etDistanciaAgencia"
+                        map:layout_constraintEnd_toStartOf="@+id/etCostoAgencia"
+                        map:layout_constraintTop_toTopOf="@+id/etDistanciaAgencia" />
+
+                    <TextView
+                        android:id="@+id/etCostoAgencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:text="S/15.00"
+                        android:textColor="#454F63"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        map:layout_constraintBottom_toBottomOf="@+id/textView5"
+                        map:layout_constraintEnd_toEndOf="parent"
+                        map:layout_constraintHorizontal_bias="1.0"
+                        map:layout_constraintStart_toStartOf="parent"
+                        map:layout_constraintTop_toTopOf="@+id/textView5" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DOMICILIO"
+                        android:textColor="#454F63"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        map:layout_constraintBottom_toTopOf="@+id/etObjetoAgencia"
+                        map:layout_constraintStart_toStartOf="@+id/etDistanciaAgencia"
+                        map:layout_constraintTop_toBottomOf="@+id/etDistanciaAgencia" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clTipoAcopiador"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    map:layout_constraintBottom_toTopOf="@+id/view4"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toBottomOf="@+id/map">
+
+                    <TextView
+                        android:id="@+id/txtDistanciaAgencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:text="TextView"
+                        android:textSize="@dimen/_12ssp"
+                        map:layout_constraintBottom_toTopOf="@+id/textView15"
+                        map:layout_constraintStart_toStartOf="parent"
+                        map:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Servicio:"
+                        android:textSize="@dimen/_12ssp"
+                        map:layout_constraintBottom_toTopOf="@+id/textView18"
+                        map:layout_constraintStart_toStartOf="@+id/txtDistanciaAgencia"
+                        map:layout_constraintTop_toBottomOf="@+id/txtDistanciaAgencia" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Detalle:"
+                        android:textSize="@dimen/_12ssp"
+                        map:layout_constraintBottom_toBottomOf="parent"
+                        map:layout_constraintStart_toStartOf="@+id/textView15"
+                        map:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                    <TextView
+                        android:id="@+id/txtServicioAgencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textSize="@dimen/_12ssp"
+                        map:layout_constraintBottom_toBottomOf="@+id/textView15"
+                        map:layout_constraintEnd_toStartOf="@+id/btnDatosDestinoAgencia"
+                        map:layout_constraintStart_toEndOf="@+id/textView15"
+                        map:layout_constraintTop_toTopOf="@+id/textView15"
+                        map:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/txtDetalleAgencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textSize="@dimen/_12ssp"
+                        map:layout_constraintBottom_toBottomOf="@+id/textView18"
+                        map:layout_constraintEnd_toStartOf="@+id/btnDatosDestinoAgencia"
+                        map:layout_constraintHorizontal_bias="0.0"
+                        map:layout_constraintStart_toStartOf="@+id/txtServicioAgencia"
+                        map:layout_constraintTop_toTopOf="@+id/textView18" />
+
+                    <Button
+                        android:id="@+id/btnDatosDestinoAgencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:text="Datos de destino"
+                        android:textSize="@dimen/_8ssp"
+                        android:background="@drawable/background_button_login"
+                        android:textColor="#fff"
+                        android:paddingTop="@dimen/_1sdp"
+                        android:paddingBottom="@dimen/_1sdp"
+                        android:paddingRight="@dimen/_4sdp"
+                        android:paddingLeft="@dimen/_4sdp"
+                        map:layout_constraintBottom_toBottomOf="@+id/txtDetalleAgencia"
+                        map:layout_constraintEnd_toEndOf="parent"
+                        map:layout_constraintHorizontal_bias="0.95"
+                        map:layout_constraintStart_toStartOf="parent"
+                        map:layout_constraintTop_toTopOf="@+id/txtDetalleAgencia"
+                        map:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/txtCostoAgencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:text="TextView"
+                        map:layout_constraintBottom_toBottomOf="@+id/txtDistanciaAgencia"
+                        map:layout_constraintEnd_toEndOf="parent"
+                        map:layout_constraintHorizontal_bias="1.0"
+                        map:layout_constraintStart_toEndOf="@+id/txtDistanciaAgencia"
+                        map:layout_constraintTop_toTopOf="@+id/txtDistanciaAgencia" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/txtDirEntregarEn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dir entrega"
+                    android:textSize="@dimen/_12ssp"
+                    map:layout_constraintBottom_toTopOf="@+id/txtRefEntregarEn"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="@+id/textView12"
+                    map:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                <TextView
+                    android:id="@+id/txtRefEntregarEn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ref Entrega"
+                    android:textSize="@dimen/_12ssp"
+                    map:layout_constraintBottom_toTopOf="@+id/guideline2"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintHorizontal_bias="0.0"
+                    map:layout_constraintStart_toStartOf="@+id/txtDirEntregarEn"
+                    map:layout_constraintTop_toBottomOf="@+id/txtDirEntregarEn" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

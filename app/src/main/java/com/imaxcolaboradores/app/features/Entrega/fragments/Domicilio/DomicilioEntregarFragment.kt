@@ -2,14 +2,24 @@ package com.imaxcolaboradores.app.features.Entrega.fragments.Domicilio
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.view.ContextThemeWrapper
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.imaxclientes.app.models.PedidoAgencia
+import com.imaxclientes.app.models.PedidoCargo
+import com.imaxclientes.app.models.PedidoDomicilio
 
 import com.imaxcolaboradores.app.R
+import com.imaxcolaboradores.app.features.Entrega.SolicitudActivity
+import com.imaxcolaboradores.app.features.Entrega.fragments.Agencia.ServicioAgenciaFragment
+import com.imaxcolaboradores.app.features.Entrega.fragments.iMaxCargo.AcopiadoresDetallePedidoFragment
+import com.imaxcolaboradores.app.models.SolicitudesDisponibles
 import kotlinx.android.synthetic.main.fragment_domicilio_entregar.*
 import kotlinx.android.synthetic.main.fragment_domicilio_entregar.view.*
 
@@ -18,6 +28,11 @@ import kotlinx.android.synthetic.main.fragment_domicilio_entregar.view.*
  */
 class DomicilioEntregarFragment : Fragment(),OnMapReadyCallback {
 
+
+    private lateinit var pedidoCargo: PedidoCargo
+    private lateinit var pedidoAgencia: PedidoAgencia
+    private lateinit var pedidoDomicilio: PedidoDomicilio
+    private lateinit var solicitud: SolicitudesDisponibles
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,61 +47,122 @@ class DomicilioEntregarFragment : Fragment(),OnMapReadyCallback {
             mMapView.onResume()
             mMapView.getMapAsync(this)
         }
-/*
-        if(solicitudRecojo!!.tipo=="DOMICILIO"){
-            pedidoDomicilio = solicitudRecojo!!.data!! as PedidoDomicilio
-            txtRecogerDireccion.text = pedidoDomicilio.recogerEn!!
-            txtRecogerReferencia.text = pedidoDomicilio.referenciaRecoger1!!
-            txtEntregarDireccion.text = pedidoDomicilio.dejarEn!!
-            //txtDomicilio.text = pedidoDomicilio.
-            txtDistancia.text = "${pedidoDomicilio.distancia1!!}"
-            txtCosto.text = "${pedidoDomicilio.costoServicio!!}"
-            txtObjeto.text = ""
 
-        }else if(solicitudRecojo!!.tipo=="AGENCIA LIMA"){
-            pedidoAgencia = solicitudRecojo!!.data!! as PedidoAgencia
-            txtRecogerDireccion.text = pedidoAgencia.recogerEn!!
-            txtRecogerReferencia.text = pedidoAgencia.referenciaRecoger1!!
-            txtEntregarDireccion.text = "" //dejar en
-            //txtDomicilio.text = pedidoDomicilio.
-            txtDistancia.text = "${pedidoAgencia.distancia1!!}km"
-            txtCosto.text = "${pedidoAgencia.costoServicio!!}"
-            txtObjeto.text = ""
+        solicitud = (context as SolicitudActivity).solicitud
 
-        }else if(solicitudRecojo!!.tipo=="CON RECOJO"){
-            pedidoCargo = solicitudRecojo!!.data!! as PedidoCargo
-            txtRecogerDireccion.text = pedidoCargo.recogerEn!!
-            txtRecogerReferencia.text = pedidoCargo.referenciaRecoger1!!
-            txtEntregarDireccion.text = ""//pedidoCargo.dejarEn!!
-            //txtDomicilio.text = pedidoDomicilio.
-            txtDistancia.text = "${pedidoCargo.distancia1!!}"
-            txtCosto.text = "${pedidoCargo.costoServicio!!}"
-            txtObjeto.text = ""
+        if(solicitud!!.tipo=="DOMICILIO"){
+            pedidoDomicilio = solicitud!!.data!! as PedidoDomicilio
+            view.txtRecogerDireccion.text = pedidoDomicilio.recogerEn!!
+            view.txtRecogerReferencia.text = pedidoDomicilio.referenciaRecoger1!!
+            view.txtEntregarDireccion.text = pedidoDomicilio.dejarEn!!
+            view.txtDomicilio.text = "D"
+            view.txtDistancia.text = "${pedidoDomicilio.distancia1!!}"
+            view.txtCosto.text = "${pedidoDomicilio.costoServicio!!}"
+            view.txtObjeto.text = "Objeto"
 
-        }else if(solicitudRecojo!!.tipo=="SIN RECOJO"){
-            pedidoCargo = solicitudRecojo!!.data!! as PedidoCargo
-            txtRecogerDireccion.text = pedidoCargo.recogerEn!!
-            txtRecogerReferencia.text = pedidoCargo.referenciaRecoger1!!
-            txtEntregarDireccion.text = ""//pedidoCargo.dejarEn!!
-            //txtDomicilio.text = pedidoDomicilio.
-            txtDistancia.text = "${pedidoCargo.distancia1!!}"
-            txtCosto.text = "${pedidoCargo.costoServicio!!}"
-            txtObjeto.text = ""
+        }else if(solicitud!!.tipo=="AGENCIA LIMA"){
+            //pedidoAgencia = solicitud!!.data!! as PedidoAgencia
+            (context as SolicitudActivity).supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,ServicioAgenciaFragment(),"servicio_agencia").commit()
+
+        }else if(solicitud!!.tipo=="CON RECOJO"){
+            pedidoCargo = solicitud!!.data!! as PedidoCargo
+            (context as SolicitudActivity).supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,AcopiadoresDetallePedidoFragment(),"detalle_pedido").commit()
+
+        }else if(solicitud!!.tipo=="SIN RECOJO"){
+            pedidoCargo = solicitud!!.data!! as PedidoCargo
+            (context as SolicitudActivity).supportFragmentManager.beginTransaction().replace(R.id.fl_solicitud,AcopiadoresDetallePedidoFragment(),"detalle_pedido").commit()
 
         }
 
-        btnLlegueRecoger.setOnClickListener{
-
-        }
-
-
-*/
-
-
+        initButtons(view)
 
         return view
     }
 
+    fun initButtons(view:View){
+
+        view.btnLlegueRecoger.setOnClickListener{
+
+            val builder = AlertDialog.Builder(ContextThemeWrapper(context, R.style.AlertDialogCustom))
+
+            with(builder) {
+                setTitle(solicitud.tipo)
+                setMessage("¿Recogió el pedido?")
+                setPositiveButton("Ok") { dialog, which ->
+
+                    if (solicitud.tipo == "DOMICILIO") {
+                        pedidoDomicilio.estadoServicio = "5" //recogido
+                        (activity as SolicitudActivity).database!!.collection("pedidos")
+                            .document(solicitud.idDocument!!)
+                            .set(pedidoDomicilio!!)
+                            .addOnSuccessListener { Log.d("aca", "DocumentSnapshot successfully written!")
+                                dialog.dismiss()
+                                (activity as SolicitudActivity).supportFragmentManager.beginTransaction()
+                                    .replace(R.id.fl_solicitud,  DomicilioRealizadoFragment(), "domicilio_realizado").commit()
+                            }
+                            .addOnFailureListener { e -> Log.w("aca", "Error writing document", e)
+
+                            }
+
+
+
+
+                    } else if (solicitud.tipo == "AGENCIA LIMA") {
+                        pedidoAgencia.estadoServicio = "5" //recogido
+                        (activity as SolicitudActivity).database!!.collection("pedidos")
+                            .document(solicitud.idDocument!!)
+                            .set(pedidoAgencia!!)
+                            .addOnSuccessListener { Log.d("aca", "DocumentSnapshot successfully written!")
+                                dialog.dismiss()
+                                (activity as SolicitudActivity).supportFragmentManager.beginTransaction()
+                                    .replace(R.id.fl_solicitud,  DomicilioEntregarFragment(), "domicilio_entrega").commit()
+                            }
+                            .addOnFailureListener { e -> Log.w("aca", "Error writing document", e)
+
+                            }
+
+                    } else if (solicitud.tipo == "CON RECOJO") {
+                        pedidoCargo.estadoServicio = "5" //recogido
+                        (activity as SolicitudActivity).database!!.collection("pedidos")
+                            .document(solicitud.idDocument!!)
+                            .set(pedidoCargo!!)
+                            .addOnSuccessListener { Log.d("aca", "DocumentSnapshot successfully written!")
+                                dialog.dismiss()
+
+                                (activity as SolicitudActivity).supportFragmentManager.beginTransaction()
+                                    .replace(R.id.fl_solicitud,  DomicilioEntregarFragment(), "domicilio_entrega").commit()
+                            }
+                            .addOnFailureListener { e -> Log.w("aca", "Error writing document", e)
+
+                            }
+
+                    } else if (solicitud.tipo == "SIN RECOJO") {
+                        pedidoCargo.estadoServicio = "5" //recogido
+                        (activity as SolicitudActivity).database!!.collection("pedidos")
+                            .document(solicitud.idDocument!!)
+                            .set(pedidoCargo!!)
+                            .addOnSuccessListener { Log.d("aca", "DocumentSnapshot successfully written!")
+                                dialog.dismiss()
+                                (activity as SolicitudActivity).supportFragmentManager.beginTransaction()
+                                    .replace(R.id.fl_solicitud,  DomicilioEntregarFragment(), "domicilio_entrega").commit()
+                            }
+                            .addOnFailureListener { e -> Log.w("aca", "Error writing document", e)
+
+                            }
+
+                    }
+
+                }
+                setNegativeButton("Cancel") { dialog, which ->
+                    dialog.dismiss()
+                }
+                builder.show()
+            }
+
+        }
+
+
+    }
     override fun onMapReady(p0: GoogleMap?) {
 
     }
